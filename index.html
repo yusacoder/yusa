@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YusaCoder | Premium Tanıtım</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060606;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.72);
+      --dim: rgba(255,255,255,0.48);
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --nav-brand-top: #070707;
+      --nav-brand-scroll: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.12) 16%, rgba(255,255,255,0.03) 28%, transparent 45%),
+        linear-gradient(180deg, #090909 0%, #060606 35%, #050505 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    img, a, button { -webkit-user-drag: none; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.95));
+      z-index: -3;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.06), transparent 20%),
+        radial-gradient(circle at 85% 28%, rgba(255,255,255,0.05), transparent 18%),
+        radial-gradient(circle at 50% 78%, rgba(255,255,255,0.04), transparent 24%);
+      z-index: -2;
+    }
+
+    .brand-font {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .background-layer {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .code-rain {
+      position: absolute;
+      top: -20vh;
+      color: rgba(255,255,255,0.10);
+      font-family: monospace;
+      white-space: nowrap;
+      animation: fall linear infinite;
+      filter: blur(0.2px);
+    }
+
+    .floating-symbol {
+      position: absolute;
+      color: rgba(255,255,255,0.08);
+      font-family: 'Orbitron', sans-serif;
+      animation: drift ease-in-out infinite;
+    }
+
+    @keyframes fall {
+      from { transform: translate3d(0, -15vh, 0) rotate(8deg); }
+      to { transform: translate3d(-42px, 130vh, 0) rotate(8deg); }
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.08; }
+      50% { transform: translateY(-18px) translateX(12px) scale(1.08); opacity: 0.18; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes lineSweep {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
+    }
+
+    .container { width: min(1200px, calc(100% - 24px)); margin: 0 auto; }
+
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: background 0.6s ease, backdrop-filter 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .navbar.scrolled {
+      background: rgba(9,9,9,0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom-color: rgba(255,255,255,0.08);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+
+    .nav-left { display: flex; align-items: center; gap: 12px; }
+
+    .menu-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.34);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.45s ease;
+    }
+
+    .navbar.scrolled .menu-btn {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    .menu-btn:hover { transform: translateY(-1px) scale(1.02); }
+
+    .hamburger { width: 18px; height: 14px; position: relative; }
+    .hamburger span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: #0a0a0a;
+      transition: all 0.45s ease;
+    }
+
+    .navbar.scrolled .hamburger span { background: #ffffff; }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 6px; }
+    .hamburger span:nth-child(3) { top: 12px; }
+
+    .menu-btn.active .hamburger span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+    .menu-btn.active .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-btn.active .hamburger span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+    .brand-link {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: clamp(0.98rem, 2.8vw, 1.08rem);
+      font-weight: 800;
+      color: var(--nav-brand-top);
+      transition: color 0.6s ease, text-shadow 0.6s ease;
+    }
+
+    .navbar.scrolled .brand {
+      color: var(--nav-brand-scroll);
+      text-shadow: 0 0 28px rgba(255,255,255,0.12);
+    }
+
+    .nav-pill {
+      border-radius: 999px;
+      padding: 11px 16px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.32);
+      color: rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      transition: all 0.5s ease;
+      text-align: center;
+    }
+
+    .navbar.scrolled .nav-pill {
+      border-color: rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.72);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 78px;
+      left: 12px;
+      right: 12px;
+      z-index: 999;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(10,10,10,0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+      padding: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-18px) scale(0.97);
+      transform-origin: top center;
+      transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .mobile-menu a {
+      display: block;
+      text-decoration: none;
+      color: rgba(255,255,255,0.9);
+      padding: 15px 16px;
+      border-radius: 18px;
+      margin-bottom: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .mobile-menu a:last-child { margin-bottom: 0; }
+    .mobile-menu a:hover, .mobile-menu a:active {
+      background: rgba(255,255,255,0.08);
+      transform: translateX(2px);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 106px 0 44px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: rgba(255,255,255,0.72);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .eyebrow-dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 0 20px rgba(255,255,255,0.65);
+    }
+
+    .hero-title, .hero-line, .hero-text, .hero-actions, .preview-card, .feature-card, .footer-shell {
+      opacity: 0;
+      transform: translateY(28px);
+      animation: fadeUp 0.95s ease forwards;
+    }
+
+    .hero-title {
+      animation-delay: 0.12s;
+      margin-top: 18px;
+      font-size: clamp(2.4rem, 13vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      max-width: 760px;
+    }
+
+    .hero-title span { display: block; color: rgba(255,255,255,0.84); }
+
+    .hero-line {
+      animation-delay: 0.22s;
+      margin-top: 22px;
+      width: 130px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    }
+
+    .hero-text {
+      animation-delay: 0.32s;
+      margin-top: 22px;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      animation-delay: 0.42s;
+      margin-top: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-primary, .btn-ghost {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 15px 20px;
+      transition: all 0.45s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .btn-primary { background: #ffffff; color: #070707; box-shadow: 0 12px 36px rgba(255,255,255,0.12); }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.02); }
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: rgba(255,255,255,0.72);
+    }
+
+    .preview-card {
+      animation-delay: 0.28s;
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .preview-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 10%, rgba(255,255,255,0.06) 48%, transparent 70%);
+      transform: translateX(-120%);
+      animation: lineSweep 7s linear infinite;
+    }
+
+    .preview-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.38);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 18px;
+    }
+
+    .preview-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 20px; }
+    .mini-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+    }
+    .mini-brand { margin-top: 8px; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,0.95); }
+    .mini-pill {
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+      padding: 9px 12px;
+      color: rgba(255,255,255,0.54);
+      font-size: 9px;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .info-box, .signature-box {
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+    }
+
+    .info-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+    .info-title { margin-top: 8px; font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.92); }
+    .info-text { margin-top: 10px; color: rgba(255,255,255,0.68); font-size: 0.92rem; line-height: 1.75; }
+    .signature-box { margin-top: 12px; background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); }
+    .signature-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .signature-dot { width: 10px; height: 10px; border-radius: 999px; background: rgba(255,255,255,0.80); box-shadow: 0 0 20px rgba(255,255,255,0.7); flex-shrink: 0; }
+    .signature-title { margin-top: 10px; font-size: 1.45rem; font-weight: 800; letter-spacing: -0.03em; color: rgba(255,255,255,0.96); }
+
+    .features { padding: 0 0 80px; }
+    .feature-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .feature-card {
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      padding: 20px;
+      transition: transform 0.45s ease, border-color 0.45s ease, background 0.45s ease;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-title { margin-top: 10px; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; color: rgba(255,255,255,0.94); }
+    .feature-text { margin-top: 10px; color: rgba(255,255,255,0.68); line-height: 1.8; font-size: 0.94rem; }
+
+    .footer { padding: 0 0 22px; }
+    .footer-shell {
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .footer-main {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .copyright-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.78);
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .copyright-icon, .insta-icon {
+      width: 42px; height: 42px; border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      flex-shrink: 0;
+    }
+
+    .follow-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      color: rgba(255,255,255,0.82);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+      padding: 12px 18px;
+      transition: all 0.45s ease;
+      width: 100%;
+    }
+
+    .follow-btn span:last-child { font-size: 0.84rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    .follow-btn:hover { transform: translateY(-2px) scale(1.01); }
+    .footer-note { padding-top: 16px; color: rgba(255,255,255,0.36); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    @media (min-width: 769px) {
+      .container { width: min(1200px, calc(100% - 32px)); }
+      .hero { padding: 120px 0 64px; }
+      .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 40px; }
+      .hero-actions { flex-direction: row; flex-wrap: wrap; }
+      .btn-primary, .btn-ghost { width: auto; }
+      .feature-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .info-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .footer-main { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+      .follow-btn { width: auto; }
+      .mobile-menu {
+        left: auto;
+        right: 16px;
+        width: 320px;
+      }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false">
+  <div class="background-layer" id="backgroundLayer"></div>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <button class="menu-btn" id="menuBtn" aria-label="Menü" aria-expanded="false" aria-controls="mobileMenu">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <a href="index.html" class="brand-link" aria-label="YusaCoder ana sayfa">
+          <div class="brand brand-font">YusaCoder</div>
+        </a>
+      </div>
+      <div class="nav-pill">Premium Web Identity</div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="oyunlar.html">Oyunlar</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Cinematic Software Showcase
+          </div>
+
+          <h1 class="hero-title">
+            Ultra premium bir
+            <span>yazılım vitrini.</span>
+          </h1>
+
+          <div class="hero-line"></div>
+
+          <p class="hero-text">
+            Yuşa Yalın tarafından oluşturulan bu site sadece tanıtım ve test amaçlıdır.
+            Modern arayüz denemeleri, yazılım temelli tasarım anlayışı ve estetik önizleme
+            çalışmaları için hazırlanmıştır. Bu proje, premium web tasarım ve yazılım
+            konseptlerini yansıtmak amacıyla oluşturulmuştur.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#intro" class="btn-primary">İncelemeye Başla ↓</a>
+            <a href="iletisim.html" class="btn-ghost">İletişim Sayfası</a>
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <div class="preview-inner">
+            <div class="preview-top">
+              <div>
+                <div class="mini-label">Identity Preview</div>
+                <div class="mini-brand brand-font">YUSACODER</div>
+              </div>
+              <div class="mini-pill">Live Concept</div>
+            </div>
+
+            <div class="info-box">
+              <div class="mini-label">Interface Tone</div>
+              <div class="info-title">Luxury • Motion • Precision</div>
+            </div>
+
+            <div class="info-grid">
+              <div class="info-box">
+                <div class="mini-label">Visual System</div>
+                <div class="info-text">
+                  Glass yüzeyler, kontrollü kontrast, sinematik katmanlar ve hafif kod atmosferi.
+                </div>
+              </div>
+              <div class="info-box">
+                <div class="mini-label">Brand Presence</div>
+                <div class="info-text">
+                  Tek sayfada güçlü bir yazılım kimliği ve elit bir stüdyo görünümü.
+                </div>
+              </div>
+            </div>
+
+            <div class="signature-box">
+              <div class="signature-row">
+                <div class="mini-label">Signature Mood</div>
+                <div class="signature-dot"></div>
+              </div>
+              <div class="signature-title">Premium Developer Presence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="intro">
+      <div class="container">
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="mini-label">Motion</div>
+            <h3 class="feature-title">Akıcı geçişler</h3>
+            <p class="feature-text">
+              Scroll ve hover etkileşimleri sert değil; pahalı hissettiren, rafine bir akış sunar.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="mini-label">Depth</div>
+            <h3 class="feature-title">Katmanlı atmosfer</h3>
+            <p class="feature-text">
+              Arka plandaki kod akışı ve hafif parıltılar, teknolojik derinliği minimal çizgide taşır.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="mini-label">Identity</div>
+            <h3 class="feature-title">Kişisel marka hissi</h3>
+            <p class="feature-text">
+              Tek sayfada güçlü bir yazılım vitrini oluşturarak modern bir stüdyo görünümü verir.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-shell reveal">
+        <div class="footer-main">
+          <div class="copyright-wrap">
+            <span class="copyright-icon">©</span>
+            <p>© 2024–2026 YusaCoder. Tüm hakları saklıdır.</p>
+          </div>
+
+          <a href="https://instagram.com/yusacoder" target="_blank" rel="noopener noreferrer" class="follow-btn" aria-label="Instagram takip et">
+            <span class="insta-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="4.2" stroke="white" stroke-width="1.8"/>
+                <circle cx="17.3" cy="6.7" r="1.1" fill="white"/>
+              </svg>
+            </span>
+            <span>@yusacoder</span>
+          </a>
+        </div>
+        <div class="footer-note">Crafted for a premium software presence.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const backgroundLayer = document.getElementById('backgroundLayer');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function onScroll() {
+      if (window.scrollY > 24) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    }
+
+    function toggleMenu(forceState) {
+      const willOpen = typeof forceState === 'boolean' ? forceState : !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open', willOpen);
+      menuBtn.classList.toggle('active', willOpen);
+      menuBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    }
+
+    menuBtn.addEventListener('click', () => toggleMenu());
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        toggleMenu(false);
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    window.addEventListener('scroll', () => {
+      onScroll();
+      toggleMenu(false);
+    });
+    onScroll();
+
+    const codeItems = ['0101', '</>', 'const x = 1;', 'function()', '{ }', 'npm run build', 'import', 'return', '<div>', 'grid'];
+
+    for (let i = 0; i < 22; i++) {
+      const span = document.createElement('span');
+      span.className = 'code-rain';
+      span.textContent = codeItems[Math.floor(Math.random() * codeItems.length)];
+      span.style.left = Math.random() * 100 + '%';
+      span.style.fontSize = (10 + Math.random() * 18) + 'px';
+      span.style.opacity = (0.05 + Math.random() * 0.12).toFixed(2);
+      span.style.animationDuration = (16 + Math.random() * 18) + 's';
+      span.style.animationDelay = (-Math.random() * 12) + 's';
+      backgroundLayer.appendChild(span);
+    }
+
+    for (let i = 0; i < 12; i++) {
+      const symbol = document.createElement('span');
+      symbol.className = 'floating-symbol brand-font';
+      symbol.textContent = i % 2 === 0 ? '</>' : '0101';
+      symbol.style.left = Math.random() * 100 + '%';
+      symbol.style.top = Math.random() * 100 + '%';
+      symbol.style.fontSize = (14 + Math.random() * 18) + 'px';
+      symbol.style.animationDuration = (10 + Math.random() * 10) + 's';
+      symbol.style.animationDelay = (-Math.random() * 8) + 's';
+      backgroundLayer.appendChild(symbol);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'a', 'x'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('copy', (e) => e.preventDefault());
+    document.addEventListener('cut', (e) => e.preventDefault());
+    document.addEventListener('selectstart', (e) => e.preventDefault());
+    document.addEventListener('dragstart', (e) => e.preventDefault());
+  </script>
+</body>
+</html>
