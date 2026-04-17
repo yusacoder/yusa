@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beni Affeder Misin?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    body{
+      min-height:100vh;
+      overflow:hidden;
+      font-family:'Inter',sans-serif;
+      background:#ffffff;
+      color:#111;
+      position:relative;
+    }
+
+    .fall-layer{
+      position:fixed;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .fall-item{
+      position:absolute;
+      top:-10vh;
+      font-size:22px;
+      animation:fall linear forwards;
+      opacity:.9;
+    }
+
+    @keyframes fall{
+      from{transform:translateY(-10vh) rotate(0deg)}
+      to{transform:translateY(120vh) rotate(360deg)}
+    }
+
+    .wrap{
+      position:relative;
+      z-index:2;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:min(100%, 520px);
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(0,0,0,.08);
+      backdrop-filter:blur(10px);
+      border-radius:32px;
+      box-shadow:0 20px 60px rgba(0,0,0,.12);
+      padding:28px 20px;
+      text-align:center;
+    }
+
+    .top-title{
+      font-family:'Pacifico',cursive;
+      font-size:clamp(2rem, 8vw, 3rem);
+      color:#ff4d8d;
+    }
+
+    .main-text{
+      margin-top:18px;
+      font-size:clamp(1.6rem, 7vw, 2.5rem);
+      font-weight:900;
+      line-height:1.15;
+    }
+
+    .sub{
+      margin-top:10px;
+      font-size:1rem;
+      color:#555;
+    }
+
+    .btns{
+      margin-top:28px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      min-height:82px;
+    }
+
+    button{
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      font-weight:800;
+      transition:all .25s ease;
+      box-shadow:0 12px 26px rgba(0,0,0,.10);
+    }
+
+    .yes-btn{
+      background:#ff4d8d;
+      color:#fff;
+      padding:16px 26px;
+      font-size:1rem;
+      transform:scale(1);
+    }
+
+    .no-btn{
+      background:#f1f1f1;
+      color:#333;
+      padding:16px 26px;
+      font-size:1rem;
+      transform:scale(1);
+    }
+
+    .message{
+      margin-top:22px;
+      min-height:28px;
+      font-weight:800;
+      color:#ff4d8d;
+      font-size:1.05rem;
+    }
+
+    .back-link{
+      display:inline-block;
+      margin-top:18px;
+      text-decoration:none;
+      color:#666;
+      font-weight:700;
+    }
+  </style>
+</head>
+<body>
+  <div class="fall-layer" id="fallLayer"></div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="top-title">Beni affet</div>
+
+      <div class="main-text" id="mainQuestion">
+        Beni affeder misin 🥺
+      </div>
+
+      <div class="sub" id="subText">
+        Lütfen bir seçim yap...
+      </div>
+
+      <div class="btns" id="btnArea">
+        <button class="yes-btn" id="yesBtn">Evet</button>
+        <button class="no-btn" id="noBtn">Hayır</button>
+      </div>
+
+      <div class="message" id="message"></div>
+
+      <a href="oyunlar.html" class="back-link">← Oyunlara dön</a>
+    </div>
+  
+</div>
+
+  <script>
+    const fallLayer = document.getElementById('fallLayer');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const message = document.getElementById('message');
+    const mainQuestion = document.getElementById('mainQuestion');
+    const subText = document.getElementById('subText');
+    const btnArea = document.getElementById('btnArea');
+
+    let noCount = 0;
+    let yesScale = 1;
+    let noScale = 1;
+
+    function createFallingItem(symbol, amount = 20) {
+      for (let i = 0; i < amount; i++) {
+        const item = document.createElement('div');
+        item.className = 'fall-item';
+        item.textContent = symbol;
+        item.style.left = Math.random() * 100 + '%';
+        item.style.fontSize = (18 + Math.random() * 18) + 'px';
+        item.style.animationDuration = (3 + Math.random() * 3) + 's';
+        item.style.animationDelay = (Math.random() * 1.5) + 's';
+        fallLayer.appendChild(item);
+
+        setTimeout(() => item.remove(), 7000);
+      }
+    }
+
+    function startHearts() {
+      setInterval(() => {
+        createFallingItem('💖', 6);
+      }, 900);
+    }
+
+    function startFireworks() {
+      createFallingItem('🎉', 18);
+      createFallingItem('✨', 12);
+      createFallingItem('💥', 10);
+    }
+
+    startHearts();
+
+    noBtn.addEventListener('click', () => {
+      noCount++;
+
+      yesScale += 0.18;
+      noScale -= 0.14;
+
+      if (noScale < 0.45) noScale = 0.45;
+
+      yesBtn.style.transform = `scale(${yesScale})`;
+      noBtn.style.transform = `scale(${noScale})`;
+
+      const messages = [
+        'Bir daha düşün 🥺',
+        'Emin misin? 💔',
+        'Bak evet daha iyi gibi 😔',
+        'Hâlâ hayır mı? 🥹',
+        'Pes et artık 😍'
+      ];
+
+      message.textContent = messages[Math.min(noCount - 1, messages.length - 1)];
+
+      if (noCount >= 5) {
+        noBtn.remove();
+        message.textContent = 'Pes et artık 😍';
+        subText.textContent = 'Artık sadece doğru seçenek kaldı.';
+      }
+    });
+
+    yesBtn.addEventListener('click', () => {
+      if (noCount >= 5) {
+        mainQuestion.textContent = 'Olleey 🎉';
+      } else {
+        mainQuestion.textContent = 'Beni affettiiin 💖';
+      }
+
+      subText.textContent = 'Mutlu son aktif edildi.';
+      message.textContent = 'Yuppii ✨';
+      startFireworks();
+
+      setTimeout(() => {
+        startFireworks();
+      }, 800);
+    });
+  </script>
+</body>
+</html>
