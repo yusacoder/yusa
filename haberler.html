@@ -410,6 +410,40 @@
       padding: 18px;
     }
 
+    .news-author-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .news-author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .news-author-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .news-author-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .news-author-sub {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.46);
+    }
+
     .mini-label {
       font-size: 10px;
       letter-spacing: 0.22em;
@@ -553,6 +587,41 @@
 
     .news-modal-content {
       padding: 22px;
+    }
+
+    .modal-author-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      margin-top: 4px;
+    }
+
+    .modal-author-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .modal-author-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .modal-author-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.96);
+    }
+
+    .modal-author-sub {
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.46);
     }
 
     .news-modal-title {
@@ -714,7 +783,7 @@
   <nav class="mobile-menu" id="mobileMenu">
     <a href="index.html">Ana Sayfa</a>
     <a href="iletisim.html">İletişim</a>
-   <a href="oyunlar.html">Oyunlar</a>
+    <a href="oyunlar.html">Oyunlar</a>
     <a href="haberler.html">Haberler</a>
   </nav>
 
@@ -723,16 +792,14 @@
       <div class="container">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-         Yusa Coder Haberler
+          Yusa Coder Haberler
         </div>
 
         <h1 class="page-title">
           Güncel içerikler
           <span>ve haber arşivi.</span>
         </h1>
-
-    
-     
+      </div>
     </section>
 
     <section class="news-section">
@@ -740,188 +807,283 @@
         <div class="news-grid">
 
 <article class="news-card">
-  <img src="https://halkinsesicomtr.teimg.com/crop/1280x720/halkinsesi-com-tr/uploads/2026/04/gen-kizzzz.jpg" alt="Türk bayrağına yönelik paylaşımlar sonrası başlatılan adli işlem haberi görseli" class="news-image" />
+  <img src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2440000/trump-iran-hurmuz-2440350_1.jpg" alt="Hürmüz Boğazı gerilimi haber görseli" class="news-image" />
 
   <div class="news-content">
-    <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
-    <h2 class="news-title">Türk bayrağına yönelik paylaşımlar sonrası 15 yaşındaki şüpheli hakkında adli işlem</h2>
-    <p class="news-meta">Sosyal medya • Adli süreç • 17 Nisan 2026</p>
+    <div class="news-author-row">
+      <img src="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" alt="Admin profil" class="news-author-avatar" />
+      <div class="news-author-info">
+        <div class="news-author-name">YusaCoder</div>
+        <div class="news-author-sub">Tarafından eklendi</div>
+      </div>
+    </div>
+
+    <div class="mini-label">Dünya / Gündem / 18 Nisan 2026</div>
+    <h2 class="news-title">İran Güvenlik Konseyi: Abluka sürerse Hürmüz Boğazı’ndan geçişler engellenecek</h2>
+    <p class="news-meta">İran • ABD ablukası • Enerji hattı</p>
     <p class="news-summary">
-      Sosyal medyada Türk bayrağına yönelik saygısızlık içeren görüntülerin
-      yayılması üzerine, 15 yaşındaki bir şüpheli hakkında adli işlem başlatıldı.
+      İran Ulusal Güvenlik Yüksek Konseyi, ABD’nin deniz ablukasını sürdürmesi halinde
+      Hürmüz Boğazı’ndaki geçişlerin yeniden engellenebileceğini duyurdu.
     </p>
 
     <div class="news-actions">
       <button
+        type="button"
         class="btn-primary open-news-modal"
-        data-title="Türk bayrağına yönelik paylaşımlar sonrası 15 yaşındaki şüpheli hakkında adli işlem"
-        data-meta="17 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://halkinsesicomtr.teimg.com/crop/1280x720/halkinsesi-com-tr/uploads/2026/04/gen-kizzzz.jpg"
-        data-detail="17 Nisan 2026 tarihli haberlere göre, sosyal medyada Türk bayrağına yönelik saygısızlık içeren görüntülerin paylaşılmasının ardından güvenlik birimleri harekete geçti. Yapılan incelemelerde olayı gerçekleştiren kişinin 15 yaşındaki İ.N.B. olduğu tespit edildi ve şüpheli hakkında adli işlem başlatıldı. Resmi haberlerde sürecin 'Devletin egemenlik alametlerini aşağılamak' suçlaması kapsamında değerlendirildiği belirtildi. Olay, sosyal medyada kısa sürede geniş yankı uyandırırken, yetkililer yalnızca doğrulanmış resmi bilgilere itibar edilmesi gerektiğini vurguladı."
+        data-title="İran Güvenlik Konseyi: Abluka sürerse Hürmüz Boğazı’ndan geçişler engellenecek"
+        data-meta="18 Nisan 2026 • Dünya Gündemi"
+        data-image="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2440000/trump-iran-hurmuz-2440350_1.jpg"
+        data-author-name="YusaCoder"
+        data-author-sub="Tarafından eklendi"
+        data-author-avatar="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg"
+        data-detail="18 Nisan 2026’da yayımlanan haberlere göre İran Ulusal Güvenlik Yüksek Konseyi, ABD’nin deniz ablukası benzeri yollarla gemi geçişlerini engellemeye devam etmesini ateşkes ihlali sayacağını açıkladı. Konsey, böyle bir durumda İran’ın Hürmüz Boğazı’nın şartlı ve sınırlı biçimde açılmasını da engelleyebileceğini bildirdi. Güncel uluslararası haber akışında da İran’ın boğazdaki geçişleri yeniden sınırladığı, bazı gemiler için koordinasyon ve kontrol uygulamalarını sürdürdüğü aktarıldı. Gelişme, küresel enerji taşımacılığı açısından kritik önemdeki Hürmüz Boğazı çevresindeki gerilimin yeniden yükseldiğine işaret ediyor."
       >
         Tamamını Oku
       </button>
     </div>
   </div>
 </article>
-          
+
 <article class="news-card">
-  <img src="https://i20.haber7.net/resize/1280x720/haber/haber7/bigmanset/2026/16/son_dakika_ankarada_okul_guvenligi_zirvesi_sona_erdi_yeni_kararlar_duyuruldu_1776332601_5155.jpg" alt="Okul güvenliği ve soruşturma haber görseli" class="news-image" />
+  <img src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/narin-guran-nevzat-bahtiyar-2454206_1.jpg" alt="Narin Güran davasında yeni gelişme haber görseli" class="news-image" />
 
   <div class="news-content">
+    <div class="news-author-row">
+      <img src="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" alt="Admin profil" class="news-author-avatar" />
+      <div class="news-author-info">
+        <div class="news-author-name">YusaCoder</div>
+        <div class="news-author-sub">Tarafından eklendi</div>
+      </div>
+    </div>
+
     <div class="mini-label">Türkiye / Gündem / 18 Nisan 2026</div>
-    <h2 class="news-title">Okul saldırıları sonrası paylaşımlara soruşturma: 12 şüpheli hakkında işlem</h2>
-    <p class="news-meta">Soruşturma • Güvenlik tedbirleri • 18 Nisan 2026</p>
+    <h2 class="news-title">Narin Güran davasında yeni gelişme: Nevzat Bahtiyar’ın oğlu tutuklandı</h2>
+    <p class="news-meta">Diyarbakır • Adli süreç • 18 Nisan 2026</p>
     <p class="news-summary">
-      Kahramanmaraş’taki saldırının ardından sosyal medya ve mesajlaşma
-      platformlarında yapılan paylaşımlar nedeniyle 12 şüpheli hakkında işlem başlatıldı.
-      Ülke genelinde ise okullardaki güvenlik önlemleri artırıldı.
+      Diyarbakır’da Narin Güran davasının sanığı Nevzat Bahtiyar’ın oğlu
+      İbrahim Bahtiyar, ruhsatsız silah bulundurmak suçlamasıyla tutuklandı.
     </p>
 
     <div class="news-actions">
       <button
+        type="button"
         class="btn-primary open-news-modal"
-        data-title="Okul saldırıları sonrası paylaşımlara soruşturma: 12 şüpheli hakkında işlem"
+        data-title="Narin Güran davasında yeni gelişme: Nevzat Bahtiyar’ın oğlu tutuklandı"
         data-meta="18 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://i20.haber7.net/resize/1280x720/haber/haber7/bigmanset/2026/16/son_dakika_ankarada_okul_guvenligi_zirvesi_sona_erdi_yeni_kararlar_duyuruldu_1776332601_5155.jpg"
-        data-detail="18 Nisan 2026’da yayımlanan güncel haberlere göre, okul saldırıları sonrası sosyal medya ve mesajlaşma uygulamalarında korku ve panik yaratmaya yönelik olduğu değerlendirilen paylaşımlar nedeniyle 12 şüpheli hakkında soruşturma yürütülüyor. Resmi haberlere göre şüphelilerden 1’i tutuklandı, 1’i adli kontrol şartıyla serbest bırakıldı ve diğer kişilerle ilgili işlemler sürüyor. Önceki günlerde alınan karar doğrultusunda ise Türkiye genelinde 81 ildeki eğitim kurumlarında güvenlik tedbirleri artırıldı. Yetkililer, kamuoyunun yalnızca resmi açıklamalara itibar etmesi gerektiğini vurguluyor."
+        data-image="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/narin-guran-nevzat-bahtiyar-2454206_1.jpg"
+        data-author-name="YusaCoder"
+        data-author-sub="Tarafından eklendi"
+        data-author-avatar="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg"
+        data-detail="18 Nisan 2026 tarihinde yayımlanan haberlere göre, Diyarbakır’da Narin Güran davasının sanığı Nevzat Bahtiyar’ın oğlu İbrahim Bahtiyar hakkında yeni bir adli gelişme yaşandı. Duruşma günü adliye çevresinde yapılan kontrol sırasında bir araçta 2 ruhsatsız tabanca ve çok sayıda mermi ele geçirildi. Araçta bulunan İbrahim Bahtiyar ile birlikte biri 18 yaşından küçük 2 kişi gözaltına alındı. Emniyetteki işlemlerin ardından adliyeye sevk edilen İbrahim Bahtiyar, 'ruhsatsız silah bulundurmak' suçundan tutuklanarak cezaevine gönderildi. Olay, davaya ilişkin kamuoyunda yeni bir gelişme olarak gündeme yansıdı."
       >
         Tamamını Oku
       </button>
     </div>
   </div>
 </article>
-          
+
           <article class="news-card">
-  <img src="https://pbs.twimg.com/media/HGHRbOJbYAABbFB.jpg" alt="Minecraft Parodileri erişim engeli haber görseli" class="news-image" />
+            <img src="https://halkinsesicomtr.teimg.com/crop/1280x720/halkinsesi-com-tr/uploads/2026/04/gen-kizzzz.jpg" alt="Türk bayrağına yönelik paylaşımlar sonrası başlatılan adli işlem haberi görseli" class="news-image" />
 
-  <div class="news-content">
-    <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
-    <h2 class="news-title">“Minecraft Parodileri” adlı YouTube hesabına erişim engeli getirildi</h2>
-    <p class="news-meta">YouTube • Soruşturma • 17 Nisan 2026</p>
-    <p class="news-summary">
-      Türkiye’de gündeme gelen olayların ardından, “Minecraft Parodileri” adlı
-      YouTube hesabı hakkında soruşturma başlatıldı ve hesaba erişim engeli kararı verildi.
-    </p>
+            <div class="news-content">
+              <div class="news-author-row">
+                <img src="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" alt="Admin profil" class="news-author-avatar" />
+                <div class="news-author-info">
+                  <div class="news-author-name">YusaCoder Admin</div>
+                  <div class="news-author-sub">Tarafından eklendi</div>
+                </div>
+              </div>
 
-    <div class="news-actions">
-      <button
-        class="btn-primary open-news-modal"
-        data-title="“Minecraft Parodileri” adlı YouTube hesabına erişim engeli getirildi"
-        data-meta="17 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://pbs.twimg.com/media/HGHRbOJbYAABbFB.jpg"
-        data-detail="17 Nisan 2026 tarihinde yayımlanan haberlere göre, YouTube’da faaliyet gösteren “Minecraft Parodileri” adlı hesap hakkında İstanbul Cumhuriyet Başsavcılığı tarafından resen soruşturma başlatıldı. Haberde, hesabın şiddete teşvik edici ve suç unsuru taşıdığı değerlendirilen paylaşımlar nedeniyle incelemeye alındığı belirtildi. Soruşturma kapsamında İstanbul Nöbetçi Sulh Ceza Hakimliği tarafından sosyal medya hesabına erişim engeli kararı verildiği aktarıldı. Kamuoyuna yansıyan bilgilere göre gelişme, son dönemde dijital platformlardaki içeriklere yönelik artan incelemelerin ardından gündeme geldi."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
+              <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
+              <h2 class="news-title">Türk bayrağına yönelik paylaşımlar sonrası 15 yaşındaki şüpheli hakkında adli işlem</h2>
+              <p class="news-meta">Sosyal medya • Adli süreç • 17 Nisan 2026</p>
+              <p class="news-summary">
+                Sosyal medyada Türk bayrağına yönelik saygısızlık içeren görüntülerin
+                yayılması üzerine, 15 yaşındaki bir şüpheli hakkında adli işlem başlatıldı.
+              </p>
+
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="Türk bayrağına yönelik paylaşımlar sonrası 15 yaşındaki şüpheli hakkında adli işlem"
+                  data-meta="17 Nisan 2026 • Türkiye Gündemi"
+                  data-image="https://halkinsesicomtr.teimg.com/crop/1280x720/halkinsesi-com-tr/uploads/2026/04/gen-kizzzz.jpg"
+                  data-author-name="YusaCoder Admin"
+                  data-author-sub="Tarafından eklendi"
+                  data-author-avatar="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg"
+                  data-detail="17 Nisan 2026 tarihli haberlere göre, sosyal medyada Türk bayrağına yönelik saygısızlık içeren görüntülerin paylaşılmasının ardından güvenlik birimleri harekete geçti. Yapılan incelemelerde olayı gerçekleştiren kişinin 15 yaşındaki İ.N.B. olduğu tespit edildi ve şüpheli hakkında adli işlem başlatıldı. Resmi haberlerde sürecin 'Devletin egemenlik alametlerini aşağılamak' suçlaması kapsamında değerlendirildiği belirtildi. Olay, sosyal medyada kısa sürede geniş yankı uyandırırken, yetkililer yalnızca doğrulanmış resmi bilgilere itibar edilmesi gerektiğini vurguladı."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
+
           <article class="news-card">
-  <img src="https://www.haciko.org.tr/upload/source/Haber_Gorseller/c31k-toplulugu-uyesi_1.jpg?1705399803357" alt="C31K Telegram soruşturması haber görseli" class="news-image" />
+            <img src="https://i20.haber7.net/resize/1280x720/haber/haber7/bigmanset/2026/16/son_dakika_ankarada_okul_guvenligi_zirvesi_sona_erdi_yeni_kararlar_duyuruldu_1776332601_5155.jpg" alt="Okul güvenliği ve soruşturma haber görseli" class="news-image" />
 
-  <div class="news-content">
-    <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
-    <h2 class="news-title">C31K Telegram grubuna yönelik soruşturmada 17 yaşındaki şüpheli gözaltına alındı</h2>
-    <p class="news-meta">Soruşturma • Sosyal medya paylaşımları • 17 Nisan 2026</p>
-    <p class="news-summary">
-      Okul saldırıları sonrası paylaşımlar nedeniyle başlatılan soruşturmada,
-      C31K isimli Telegram grubunun yöneticilerinden biri olduğu belirtilen
-      17 yaşındaki M.I. gözaltına alındı.
-    </p>
+            <div class="news-content">
+              <div class="mini-label">Türkiye / Gündem / 18 Nisan 2026</div>
+              <h2 class="news-title">Okul saldırıları sonrası paylaşımlara soruşturma: 12 şüpheli hakkında işlem</h2>
+              <p class="news-meta">Soruşturma • Güvenlik tedbirleri • 18 Nisan 2026</p>
+              <p class="news-summary">
+                Kahramanmaraş’taki saldırının ardından sosyal medya ve mesajlaşma
+                platformlarında yapılan paylaşımlar nedeniyle 12 şüpheli hakkında işlem başlatıldı.
+                Ülke genelinde ise okullardaki güvenlik önlemleri artırıldı.
+              </p>
 
-    <div class="news-actions">
-      <button
-        class="btn-primary open-news-modal"
-        data-title="C31K Telegram grubuna yönelik soruşturmada 17 yaşındaki şüpheli gözaltına alındı"
-        data-meta="17 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://pbs.twimg.com/media/GDwLgC7XsAAh8dj.jpg"
-        data-detail="17 Nisan 2026 tarihinde yayımlanan haberlere göre, okul saldırıları sonrasında sosyal medya ve mesajlaşma uygulamalarında yapılan paylaşımlarla ilgili soruşturma başlatıldı. Bu kapsamda, Telegram’da kurulan C31K isimli grubun yöneticilerinden birinin kimliğinin 17 yaşındaki M.I. olduğu tespit edildiği ve şüphelinin gözaltına alındığı bildirildi. Haberde, evinde yapılan aramalarda dijital materyallere el konulduğu aktarıldı. Aynı soruşturma kapsamında toplam 12 şüpheli hakkında işlem yapıldığı, bunlardan 1’inin tutuklandığı, 1’inin adli kontrol şartıyla serbest bırakıldığı ve diğerlerinin işlemlerinin sürdüğü belirtildi. Kamuoyuna yansıyan bilgilerde M.I. hakkında gözaltı işlemi doğrulanırken, bazı paylaşımlarda geçen ifadelerin aksine aynı haberde M.I. için doğrudan tutuklama bilgisi yer almıyor."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
- <article class="news-card">
-  <img src="https://webmasto.com/wp-content/uploads/2026/01/OpenAI-Cerebras.webp" alt="OpenAI ve Cerebras haber görseli" class="news-image" />
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="Okul saldırıları sonrası paylaşımlara soruşturma: 12 şüpheli hakkında işlem"
+                  data-meta="18 Nisan 2026 • Türkiye Gündemi"
+                  data-image="https://i20.haber7.net/resize/1280x720/haber/haber7/bigmanset/2026/16/son_dakika_ankarada_okul_guvenligi_zirvesi_sona_erdi_yeni_kararlar_duyuruldu_1776332601_5155.jpg"
+                  data-detail="18 Nisan 2026’da yayımlanan güncel haberlere göre, okul saldırıları sonrası sosyal medya ve mesajlaşma uygulamalarında korku ve panik yaratmaya yönelik olduğu değerlendirilen paylaşımlar nedeniyle 12 şüpheli hakkında soruşturma yürütülüyor. Resmi haberlere göre şüphelilerden 1’i tutuklandı, 1’i adli kontrol şartıyla serbest bırakıldı ve diğer kişilerle ilgili işlemler sürüyor. Önceki günlerde alınan karar doğrultusunda ise Türkiye genelinde 81 ildeki eğitim kurumlarında güvenlik tedbirleri artırıldı. Yetkililer, kamuoyunun yalnızca resmi açıklamalara itibar etmesi gerektiğini vurguluyor."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
 
-  <div class="news-content">
-    <div class="mini-label">Teknoloji / 17 Nisan 2026</div>
-    <h2 class="news-title">OpenAI, Cerebras ile dev yapay zeka çip anlaşmasına hazırlanıyor</h2>
-    <p class="news-meta">17 Nisan 2026 • Yapay zeka • Büyük teknoloji anlaşması</p>
-    <p class="news-summary">
-      OpenAI’nin, yapay zeka altyapısını büyütmek için Cerebras destekli sunuculara
-      20 milyar doların üzerinde harcama yapmayı planladığı bildirildi.
-    </p>
+          <article class="news-card">
+            <img src="https://pbs.twimg.com/media/HGHRbOJbYAABbFB.jpg" alt="Minecraft Parodileri erişim engeli haber görseli" class="news-image" />
 
-    <div class="news-actions">
-      <button
-        class="btn-primary open-news-modal"
-        data-title="OpenAI, Cerebras ile dev yapay zeka çip anlaşmasına hazırlanıyor"
-        data-meta="17 Nisan 2026 • Teknoloji Haberleri"
-        data-image="https://webmasto.com/wp-content/uploads/2026/01/OpenAI-Cerebras.webp"
-        data-detail="Reuters’a göre OpenAI, önümüzdeki 3 yıl içinde Cerebras çipleriyle çalışan sunucu altyapısı için 20 milyar doların üzerinde harcama yapmayı planlıyor. Haberde, bu anlaşmanın OpenAI’nin daha önce duyurulan büyük ölçekli bilgi işlem kapasitesi planlarının devamı niteliğinde olduğu belirtildi. Anlaşmanın ayrıca Cerebras’a veri merkezi geliştirme tarafında da büyük destek sağlayabileceği ifade ediliyor. Bu gelişme, yapay zeka sektöründe artan işlem gücü ihtiyacını ve şirketlerin daha güçlü altyapı için yaptığı dev yatırımları bir kez daha gösteriyor."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
+            <div class="news-content">
+              <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
+              <h2 class="news-title">“Minecraft Parodileri” adlı YouTube hesabına erişim engeli getirildi</h2>
+              <p class="news-meta">YouTube • Soruşturma • 17 Nisan 2026</p>
+              <p class="news-summary">
+                Türkiye’de gündeme gelen olayların ardından, “Minecraft Parodileri” adlı
+                YouTube hesabı hakkında soruşturma başlatıldı ve hesaba erişim engeli kararı verildi.
+              </p>
 
-<article class="news-card">
-  <img src="https://img.piri.net/piri/upload/3/2026/4/17/1d7d3235-s8euhat8ti73fvb1ryk4b.webp" alt="Kahramanmaraş okul saldırısı haber görseli" class="news-image" />
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="“Minecraft Parodileri” adlı YouTube hesabına erişim engeli getirildi"
+                  data-meta="17 Nisan 2026 • Türkiye Gündemi"
+                  data-image="https://pbs.twimg.com/media/HGHRbOJbYAABbFB.jpg"
+                  data-detail="17 Nisan 2026 tarihinde yayımlanan haberlere göre, YouTube’da faaliyet gösteren “Minecraft Parodileri” adlı hesap hakkında İstanbul Cumhuriyet Başsavcılığı tarafından resen soruşturma başlatıldı. Haberde, hesabın şiddete teşvik edici ve suç unsuru taşıdığı değerlendirilen paylaşımlar nedeniyle incelemeye alındığı belirtildi. Soruşturma kapsamında İstanbul Nöbetçi Sulh Ceza Hakimliği tarafından sosyal medya hesabına erişim engeli kararı verildiği aktarıldı. Kamuoyuna yansıyan bilgilere göre gelişme, son dönemde dijital platformlardaki içeriklere yönelik artan incelemelerin ardından gündeme geldi."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
 
-  <div class="news-content">
-    <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
-    <h2 class="news-title">Kahramanmaraş’taki okul saldırısında yaralı öğrencilerin tedavisi sürüyor</h2>
-    <p class="news-meta">Ayser Çalık Ortaokulu • Kahramanmaraş • Resmi açıklama</p>
-    <p class="news-summary">
-      Kahramanmaraş’ta bir ortaokulda yaşanan saldırının ardından yaralanan
-      öğrencilerin tedavilerinin sürdüğü, eğitim faaliyetlerinin ise geçici
-      olarak farklı bir okul binasında devam edeceği açıklandı.
-    </p>
+          <article class="news-card">
+            <img src="https://www.haciko.org.tr/upload/source/Haber_Gorseller/c31k-toplulugu-uyesi_1.jpg?1705399803357" alt="C31K Telegram soruşturması haber görseli" class="news-image" />
 
-    <div class="news-actions">
-      <button
-        class="btn-primary open-news-modal"
-        data-title="Kahramanmaraş’taki okul saldırısında yaralı öğrencilerin tedavisi sürüyor"
-        data-meta="17 Nisan 2026 • Kahramanmaraş • Gündem"
-        data-image="https://img.piri.net/piri/upload/3/2026/4/17/1d7d3235-s8euhat8ti73fvb1ryk4b.webp"
-        data-detail="Kahramanmaraş’taki Ayser Çalık Ortaokulu’nda yaşanan saldırının ardından yetkili kurumlar peş peşe açıklamalarda bulundu. Resmi bilgilere göre olayda yaralanan öğrencilerin tedavileri farklı hastanelerde sürerken, bazı öğrencilerin durumlarının yakından takip edildiği belirtildi. Olay sonrasında eğitim sürecinin aksamaması için okulun öğrenci ve personelinin geçici olarak başka bir okul binasında eğitim-öğretime devam etmesine karar verildi. Soruşturma kapsamında güvenlik ve adli süreç sürerken, kamuoyundan yalnızca resmi kaynaklardan yapılan açıklamaların dikkate alınması istendi. Olayın faili olarak adı geçen İsa Aras Mersinli ile ilgili soruşturma da geniş kapsamlı şekilde devam ediyor."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-    </div>
-    </article>
-  
+            <div class="news-content">
+              <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
+              <h2 class="news-title">C31K Telegram grubuna yönelik soruşturmada 17 yaşındaki şüpheli gözaltına alındı</h2>
+              <p class="news-meta">Soruşturma • Sosyal medya paylaşımları • 17 Nisan 2026</p>
+              <p class="news-summary">
+                Okul saldırıları sonrası paylaşımlar nedeniyle başlatılan soruşturmada,
+                C31K isimli Telegram grubunun yöneticilerinden biri olduğu belirtilen
+                17 yaşındaki M.I. gözaltına alındı.
+              </p>
 
-  <article class="news-card">
-  <img src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/antalya-diplomasi-forumu-aa-2454468.jpg" alt="Antalya Diplomasi Forumu haber görseli" class="news-image" />
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="C31K Telegram grubuna yönelik soruşturmada 17 yaşındaki şüpheli gözaltına alındı"
+                  data-meta="17 Nisan 2026 • Türkiye Gündemi"
+                  data-image="https://pbs.twimg.com/media/GDwLgC7XsAAh8dj.jpg"
+                  data-detail="17 Nisan 2026 tarihinde yayımlanan haberlere göre, okul saldırıları sonrasında sosyal medya ve mesajlaşma uygulamalarında yapılan paylaşımlarla ilgili soruşturma başlatıldı. Bu kapsamda, Telegram’da kurulan C31K isimli grubun yöneticilerinden birinin kimliğinin 17 yaşındaki M.I. olduğu tespit edildiği ve şüphelinin gözaltına alındığı bildirildi. Haberde, evinde yapılan aramalarda dijital materyallere el konulduğu aktarıldı. Aynı soruşturma kapsamında toplam 12 şüpheli hakkında işlem yapıldığı, bunlardan 1’inin tutuklandığı, 1’inin adli kontrol şartıyla serbest bırakıldığı ve diğerlerinin işlemlerinin sürdüğü belirtildi. Kamuoyuna yansıyan bilgilerde M.I. hakkında gözaltı işlemi doğrulanırken, bazı paylaşımlarda geçen ifadelerin aksine aynı haberde M.I. için doğrudan tutuklama bilgisi yer almıyor."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
 
-  <div class="news-content">
-    <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
-    <h2 class="news-title">Antalya Diplomasi Forumu 2026’da barış ve diyalog mesajları öne çıktı</h2>
-    <p class="news-meta">Antalya • Diplomasi • 17 Nisan 2026</p>
-    <p class="news-summary">
-      Antalya Diplomasi Forumu’nun açılışında, küresel gerilimlerin arttığı bir
-      dönemde diplomasi, diyalog ve barışçıl çözüm çağrıları ön plana çıktı.
-    </p>
+          <article class="news-card">
+            <img src="https://webmasto.com/wp-content/uploads/2026/01/OpenAI-Cerebras.webp" alt="OpenAI ve Cerebras haber görseli" class="news-image" />
 
-    <div class="news-actions">
-      <button
-        class="btn-primary open-news-modal"
-        data-title="Antalya Diplomasi Forumu 2026’da barış ve diyalog mesajları öne çıktı"
-        data-meta="17 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/antalya-diplomasi-forumu-aa-2454468.jpg"
-        data-detail="17 Nisan 2026’da Antalya’da başlayan Antalya Diplomasi Forumu, Türkiye gündeminin öne çıkan başlıklarından biri oldu. Açılışta yapılan konuşmalarda, dünyada artan gerilimler karşısında diplomasi kanallarının açık tutulmasının önemi vurgulandı. Forum kapsamında farklı ülkelerden temsilciler bir araya gelirken, bölgesel krizler, barışçıl çözüm yolları ve uluslararası iş birliği gibi konular öne çıktı. Etkinlik, Türkiye’nin diplomasi trafiğinde önemli bir buluşma noktası olarak değerlendirilirken, forum süresince çok sayıda resmi görüşme ve temasın yapılması bekleniyor."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
+            <div class="news-content">
+              <div class="mini-label">Teknoloji / 17 Nisan 2026</div>
+              <h2 class="news-title">OpenAI, Cerebras ile dev yapay zeka çip anlaşmasına hazırlanıyor</h2>
+              <p class="news-meta">17 Nisan 2026 • Yapay zeka • Büyük teknoloji anlaşması</p>
+              <p class="news-summary">
+                OpenAI’nin, yapay zeka altyapısını büyütmek için Cerebras destekli sunuculara
+                20 milyar doların üzerinde harcama yapmayı planladığı bildirildi.
+              </p>
+
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="OpenAI, Cerebras ile dev yapay zeka çip anlaşmasına hazırlanıyor"
+                  data-meta="17 Nisan 2026 • Teknoloji Haberleri"
+                  data-image="https://webmasto.com/wp-content/uploads/2026/01/OpenAI-Cerebras.webp"
+                  data-detail="Reuters’a göre OpenAI, önümüzdeki 3 yıl içinde Cerebras çipleriyle çalışan sunucu altyapısı için 20 milyar doların üzerinde harcama yapmayı planlıyor. Haberde, bu anlaşmanın OpenAI’nin daha önce duyurulan büyük ölçekli bilgi işlem kapasitesi planlarının devamı niteliğinde olduğu belirtildi. Anlaşmanın ayrıca Cerebras’a veri merkezi geliştirme tarafında da büyük destek sağlayabileceği ifade ediliyor. Bu gelişme, yapay zeka sektöründe artan işlem gücü ihtiyacını ve şirketlerin daha güçlü altyapı için yaptığı dev yatırımları bir kez daha gösteriyor."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img src="https://img.piri.net/piri/upload/3/2026/4/17/1d7d3235-s8euhat8ti73fvb1ryk4b.webp" alt="Kahramanmaraş okul saldırısı haber görseli" class="news-image" />
+
+            <div class="news-content">
+              <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
+              <h2 class="news-title">Kahramanmaraş’taki okul saldırısında yaralı öğrencilerin tedavisi sürüyor</h2>
+              <p class="news-meta">Ayser Çalık Ortaokulu • Kahramanmaraş • Resmi açıklama</p>
+              <p class="news-summary">
+                Kahramanmaraş’ta bir ortaokulda yaşanan saldırının ardından yaralanan
+                öğrencilerin tedavilerinin sürdüğü, eğitim faaliyetlerinin ise geçici
+                olarak farklı bir okul binasında devam edeceği açıklandı.
+              </p>
+
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="Kahramanmaraş’taki okul saldırısında yaralı öğrencilerin tedavisi sürüyor"
+                  data-meta="17 Nisan 2026 • Kahramanmaraş • Gündem"
+                  data-image="https://img.piri.net/piri/upload/3/2026/4/17/1d7d3235-s8euhat8ti73fvb1ryk4b.webp"
+                  data-detail="Kahramanmaraş’taki Ayser Çalık Ortaokulu’nda yaşanan saldırının ardından yetkili kurumlar peş peşe açıklamalarda bulundu. Resmi bilgilere göre olayda yaralanan öğrencilerin tedavileri farklı hastanelerde sürerken, bazı öğrencilerin durumlarının yakından takip edildiği belirtildi. Olay sonrasında eğitim sürecinin aksamaması için okulun öğrenci ve personelinin geçici olarak başka bir okul binasında eğitim-öğretime devam etmesine karar verildi. Soruşturma kapsamında güvenlik ve adli süreç sürerken, kamuoyundan yalnızca resmi kaynaklardan yapılan açıklamaların dikkate alınması istendi. Olayın faili olarak adı geçen İsa Aras Mersinli ile ilgili soruşturma da geniş kapsamlı şekilde devam ediyor."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/antalya-diplomasi-forumu-aa-2454468.jpg" alt="Antalya Diplomasi Forumu haber görseli" class="news-image" />
+
+            <div class="news-content">
+              <div class="mini-label">Türkiye / Gündem / 17 Nisan 2026</div>
+              <h2 class="news-title">Antalya Diplomasi Forumu 2026’da barış ve diyalog mesajları öne çıktı</h2>
+              <p class="news-meta">Antalya • Diplomasi • 17 Nisan 2026</p>
+              <p class="news-summary">
+                Antalya Diplomasi Forumu’nun açılışında, küresel gerilimlerin arttığı bir
+                dönemde diplomasi, diyalog ve barışçıl çözüm çağrıları ön plana çıktı.
+              </p>
+
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="Antalya Diplomasi Forumu 2026’da barış ve diyalog mesajları öne çıktı"
+                  data-meta="17 Nisan 2026 • Türkiye Gündemi"
+                  data-image="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2454000/antalya-diplomasi-forumu-aa-2454468.jpg"
+                  data-detail="17 Nisan 2026’da Antalya’da başlayan Antalya Diplomasi Forumu, Türkiye gündeminin öne çıkan başlıklarından biri oldu. Açılışta yapılan konuşmalarda, dünyada artan gerilimler karşısında diplomasi kanallarının açık tutulmasının önemi vurgulandı. Forum kapsamında farklı ülkelerden temsilciler bir araya gelirken, bölgesel krizler, barışçıl çözüm yolları ve uluslararası iş birliği gibi konular öne çıktı. Etkinlik, Türkiye’nin diplomasi trafiğinde önemli bir buluşma noktası olarak değerlendirilirken, forum süresince çok sayıda resmi görüşme ve temasın yapılması bekleniyor."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
 
         </div>
       </div>
@@ -935,6 +1097,14 @@
       <img id="modalNewsImage" src="" alt="Haber görseli" class="news-modal-image" />
 
       <div class="news-modal-content">
+        <div class="modal-author-row" id="modalAuthorRow" style="display:none;">
+          <img id="modalAuthorAvatar" src="" alt="Admin profil" class="modal-author-avatar" />
+          <div class="modal-author-info">
+            <div class="modal-author-name" id="modalAuthorName">YusaCoder Admin</div>
+            <div class="modal-author-sub" id="modalAuthorSub">Tarafından eklendi</div>
+          </div>
+        </div>
+
         <div class="mini-label" id="modalNewsMeta">Kategori / Tarih</div>
         <h2 class="news-modal-title" id="modalNewsTitle">Haber Başlığı</h2>
         <div class="news-modal-text" id="modalNewsDetail">
@@ -1039,6 +1209,10 @@
     const modalNewsMeta = document.getElementById('modalNewsMeta');
     const modalNewsTitle = document.getElementById('modalNewsTitle');
     const modalNewsDetail = document.getElementById('modalNewsDetail');
+    const modalAuthorRow = document.getElementById('modalAuthorRow');
+    const modalAuthorAvatar = document.getElementById('modalAuthorAvatar');
+    const modalAuthorName = document.getElementById('modalAuthorName');
+    const modalAuthorSub = document.getElementById('modalAuthorSub');
 
     document.querySelectorAll('.open-news-modal').forEach((button) => {
       button.addEventListener('click', () => {
@@ -1046,6 +1220,21 @@
         modalNewsMeta.textContent = button.dataset.meta || 'Kategori / Tarih';
         modalNewsImage.src = button.dataset.image || '';
         modalNewsDetail.textContent = button.dataset.detail || 'Detay metni bulunamadı.';
+
+        const authorName = button.dataset.authorName;
+        const authorSub = button.dataset.authorSub;
+        const authorAvatar = button.dataset.authorAvatar;
+
+        if (authorName || authorSub || authorAvatar) {
+          modalAuthorRow.style.display = 'flex';
+          modalAuthorName.textContent = authorName || 'YusaCoder Admin';
+          modalAuthorSub.textContent = authorSub || 'Tarafından eklendi';
+          modalAuthorAvatar.src = authorAvatar || '';
+        } else {
+          modalAuthorRow.style.display = 'none';
+          modalAuthorAvatar.src = '';
+        }
+
         newsModal.classList.add('active');
         document.body.style.overflow = 'hidden';
       });
