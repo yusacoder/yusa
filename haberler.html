@@ -381,10 +381,19 @@
       max-width: 760px;
     }
 
+    .search-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+
     .search-box {
       display: flex;
       align-items: center;
       gap: 12px;
+      width: 100%;
+      max-width: 540px;
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.10);
       background: rgba(255,255,255,0.05);
@@ -411,6 +420,25 @@
 
     .news-search-input::placeholder {
       color: rgba(255,255,255,0.42);
+    }
+
+    .news-count {
+      width: fit-content;
+      min-height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.92rem;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     .search-empty {
@@ -756,6 +784,19 @@
         width: min(1200px, calc(100% - 32px));
       }
 
+      .search-row {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .search-box {
+        flex: 0 1 540px;
+      }
+
+      .news-count {
+        flex-shrink: 0;
+      }
+
       .news-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -832,23 +873,27 @@
           <span>ve haber arşivi.</span>
         </h1>
 
-        <!-- ARAMA ÇUBUĞU -->
         <div class="search-wrap">
-          <div class="search-box">
-            <span class="search-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <circle cx="11" cy="11" r="7" stroke="white" stroke-width="1.8" opacity="0.9"></circle>
-                <path d="M20 20L17 17" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.9"></path>
-              </svg>
-            </span>
-            <input
-              type="text"
-              id="newsSearchInput"
-              class="news-search-input"
-              placeholder="Haber ara..."
-              autocomplete="off"
-            />
+          <div class="search-row">
+            <div class="search-box">
+              <span class="search-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <circle cx="11" cy="11" r="7" stroke="white" stroke-width="1.8" opacity="0.9"></circle>
+                  <path d="M20 20L17 17" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.9"></path>
+                </svg>
+              </span>
+              <input
+                type="text"
+                id="newsSearchInput"
+                class="news-search-input"
+                placeholder="Haber ara..."
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="news-count" id="newsCount">Eklenen haberler: 0</div>
           </div>
+
           <div class="search-empty" id="searchEmpty">
             Aradığın başlığa uygun haber bulunamadı.
           </div>
@@ -860,83 +905,80 @@
       <div class="container">
         <div class="news-grid" id="newsGrid">
 
+          <article class="news-card">
+            <img src="https://konyayeniguncom.teimg.com/crop/1280x720/konyayenigun-com/uploads/2026/04/kirmizi-ve-beyaz-modern-son-dakika-haberleri-youtube-kucuk-resmi-45-9.jpg" alt="Cumhurbaşkanı Erdoğan okul güvenliği açıklaması haber görseli" class="news-image" />
+            <div class="news-content">
+              <div class="news-author-row">
+                <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
+                <div class="news-author-info">
+                  <div class="news-author-name">YusaCoder</div>
+                  <div class="news-author-sub">Tarafından eklendi</div>
+                </div>
+              </div>
 
-<article class="news-card">
-  <img src="https://konyayeniguncom.teimg.com/crop/1280x720/konyayenigun-com/uploads/2026/04/kirmizi-ve-beyaz-modern-son-dakika-haberleri-youtube-kucuk-resmi-45-9.jpg" alt="Cumhurbaşkanı Erdoğan okul güvenliği açıklaması haber görseli" class="news-image" />
+              <div class="mini-label">Türkiye / Gündem / 20 Nisan 2026</div>
+              <h2 class="news-title">Erdoğan: Okullarımızın güvenliği önceliklerimizin en başındadır</h2>
+              <p class="news-meta">Cumhurbaşkanlığı • Eğitim güvenliği • 20 Nisan 2026</p>
+              <p class="news-summary">
+                Cumhurbaşkanı Recep Tayyip Erdoğan, son günlerde yaşanan olayların ardından
+                okul güvenliği konusunda taviz verilmeyeceğini söyledi.
+              </p>
 
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="Erdoğan: Okullarımızın güvenliği önceliklerimizin en başındadır"
+                  data-meta="20 Nisan 2026 • Türkiye Gündemi"
+                  data-image="https://konyayeniguncom.teimg.com/crop/1280x720/konyayenigun-com/uploads/2026/04/kirmizi-ve-beyaz-modern-son-dakika-haberleri-youtube-kucuk-resmi-45-9.jpg"
+                  data-author-name="YusaCoder"
+                  data-author-sub="Tarafından eklendi"
+                  data-author-avatar="yusacoder.jpg"
+                  data-detail="20 Nisan 2026’da Anadolu Ajansı’nda yer alan habere göre Cumhurbaşkanı Recep Tayyip Erdoğan, okul güvenliği meselesinin devletin öncelikleri arasında ilk sırada yer aldığını belirtti. Açıklamada, bu konuda en küçük bir taviz verilmeyeceği vurgulandı. Son günlerde yaşanan saldırıların ardından güvenlik tedbirlerinin daha sıkı şekilde uygulanacağı mesajı öne çıktı."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
 
-    <div class="mini-label">Türkiye / Gündem / 20 Nisan 2026</div>
-    <h2 class="news-title">Erdoğan: Okullarımızın güvenliği önceliklerimizin en başındadır</h2>
-    <p class="news-meta">Cumhurbaşkanlığı • Eğitim güvenliği • 20 Nisan 2026</p>
-    <p class="news-summary">
-      Cumhurbaşkanı Recep Tayyip Erdoğan, son günlerde yaşanan olayların ardından
-      okul güvenliği konusunda taviz verilmeyeceğini söyledi.
-    </p>
+          <article class="news-card">
+            <img src="https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/04/16/aw684193-06-u3ic_cover.jpg" alt="Okul saldırıları sonrası gözaltı kararı haber görseli" class="news-image" />
+            <div class="news-content">
+              <div class="news-author-row">
+                <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
+                <div class="news-author-info">
+                  <div class="news-author-name">YusaCoder</div>
+                  <div class="news-author-sub">Tarafından eklendi</div>
+                </div>
+              </div>
 
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Erdoğan: Okullarımızın güvenliği önceliklerimizin en başındadır"
-        data-meta="20 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://konyayeniguncom.teimg.com/crop/1280x720/konyayenigun-com/uploads/2026/04/kirmizi-ve-beyaz-modern-son-dakika-haberleri-youtube-kucuk-resmi-45-9.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="20 Nisan 2026’da Anadolu Ajansı’nda yer alan habere göre Cumhurbaşkanı Recep Tayyip Erdoğan, okul güvenliği meselesinin devletin öncelikleri arasında ilk sırada yer aldığını belirtti. Açıklamada, bu konuda en küçük bir taviz verilmeyeceği vurgulandı. Son günlerde yaşanan saldırıların ardından güvenlik tedbirlerinin daha sıkı şekilde uygulanacağı mesajı öne çıktı."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-          
-<article class="news-card">
-  <img src="https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/04/16/aw684193-06-u3ic_cover.jpg" alt="Okul saldırıları sonrası gözaltı kararı haber görseli" class="news-image" />
+              <div class="mini-label">Türkiye / Asayiş / 20 Nisan 2026</div>
+              <h2 class="news-title">Okul saldırılarının ardından 25 şüpheli hakkında gözaltı kararı</h2>
+              <p class="news-meta">Sosyal medya • Tehdit paylaşımları • 20 Nisan 2026</p>
+              <p class="news-summary">
+                Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından tehdit içerikli
+                paylaşım yaptığı belirtilen 25 kişi hakkında gözaltı kararı verildi.
+              </p>
 
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-title="Okul saldırılarının ardından 25 şüpheli hakkında gözaltı kararı"
+                  data-meta="20 Nisan 2026 • Türkiye Asayiş"
+                  data-image="https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/04/16/aw684193-06-u3ic_cover.jpg"
+                  data-author-name="YusaCoder"
+                  data-author-sub="Tarafından eklendi"
+                  data-author-avatar="yusacoder.jpg"
+                  data-detail="20 Nisan 2026’da yayımlanan haberlere göre, Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından sosyal medyada tehdit içerikli paylaşımlar yapan 25 şüpheli hakkında gözaltı kararı verildi. Haberlerde, bu kişilerden 13’ünün 18 yaşından küçük olduğu belirtildi. Soruşturmanın, kamuoyunda korku ve panik oluşturan paylaşımlar üzerine başlatıldığı aktarıldı."
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
 
-    <div class="mini-label">Türkiye / Asayiş / 20 Nisan 2026</div>
-    <h2 class="news-title">Okul saldırılarının ardından 25 şüpheli hakkında gözaltı kararı</h2>
-    <p class="news-meta">Sosyal medya • Tehdit paylaşımları • 20 Nisan 2026</p>
-    <p class="news-summary">
-      Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından tehdit içerikli
-      paylaşım yaptığı belirtilen 25 kişi hakkında gözaltı kararı verildi.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Okul saldırılarının ardından 25 şüpheli hakkında gözaltı kararı"
-        data-meta="20 Nisan 2026 • Türkiye Asayiş"
-        data-image="https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/04/16/aw684193-06-u3ic_cover.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="20 Nisan 2026’da yayımlanan haberlere göre, Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından sosyal medyada tehdit içerikli paylaşımlar yapan 25 şüpheli hakkında gözaltı kararı verildi. Haberlerde, bu kişilerden 13’ünün 18 yaşından küçük olduğu belirtildi. Soruşturmanın, kamuoyunda korku ve panik oluşturan paylaşımlar üzerine başlatıldığı aktarıldı."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-          
           <article class="news-card">
             <img src="https://imgrosetta.mynet.com.tr/file/13186972/13186972-860x480.jpg" alt="Okula göndermeyen velilere ceza iddiaları haber görseli" class="news-image" />
             <div class="news-content">
@@ -1235,22 +1277,30 @@
     document.addEventListener('selectstart', (e) => e.preventDefault());
     document.addEventListener('dragstart', (e) => e.preventDefault());
 
-    // ARAMA SİSTEMİ
     const newsSearchInput = document.getElementById('newsSearchInput');
-    const newsGrid = document.getElementById('newsGrid');
-    const newsCards = [...document.querySelectorAll('.news-card')];
     const searchEmpty = document.getElementById('searchEmpty');
     const searchEmptyBottom = document.getElementById('searchEmptyBottom');
+    const newsCount = document.getElementById('newsCount');
+
+    function getNewsCards() {
+      return [...document.querySelectorAll('.news-card')];
+    }
+
+    function updateNewsCount() {
+      const totalNews = getNewsCards().length;
+      newsCount.textContent = `Eklenen haberler: ${totalNews}`;
+    }
 
     function filterNewsByTitle() {
       const query = newsSearchInput.value.trim().toLowerCase();
+      const newsCards = getNewsCards();
       let visibleCount = 0;
 
       newsCards.forEach((card) => {
         const titleEl = card.querySelector('.news-title');
         const titleText = titleEl ? titleEl.textContent.toLowerCase() : '';
-
         const matched = titleText.includes(query);
+
         card.style.display = matched ? '' : 'none';
 
         if (matched) visibleCount++;
@@ -1259,8 +1309,11 @@
       const noResult = visibleCount === 0;
       searchEmpty.style.display = noResult ? 'block' : 'none';
       searchEmptyBottom.style.display = noResult ? 'block' : 'none';
+
+      updateNewsCount();
     }
 
+    updateNewsCount();
     newsSearchInput.addEventListener('input', filterNewsByTitle);
   </script>
 </body>
