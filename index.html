@@ -4,13 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YusaCoder | Haberler, Mini Oyunlar ve Yenilikçi Özellikler</title>
- <link rel="icon" type="image/jpeg" href="/yusacoder.jpg">
-<link rel="shortcut icon" href="/yusacoder.jpg">
-  <link rel="canonical" href="https://yusacoder.com/">
   <meta name="description" content="YusaCoder; haberler, mini oyunlar ve yenilikçi web özelliklerini modern ve mobil uyumlu bir arayüzde bir araya getirir." />
 
-  <link rel="icon" type="image/jpeg" href="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" />
-<link rel="apple-touch-icon" href="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
@@ -124,6 +119,11 @@
     @keyframes lineSweep {
       from { transform: translateX(-100%); }
       to { transform: translateX(100%); }
+    }
+
+    @keyframes homeNewsMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 8px)); }
     }
 
     .container { width: min(1200px, calc(100% - 24px)); margin: 0 auto; }
@@ -318,7 +318,7 @@
       box-shadow: 0 0 20px rgba(255,255,255,0.65);
     }
 
-    .hero-title, .hero-line, .hero-text, .hero-actions, .preview-card, .feature-card, .footer-shell {
+    .hero-title, .hero-line, .hero-text, .hero-actions, .preview-card, .feature-card, .footer-shell, .home-news-head, .home-news-slider {
       opacity: 0;
       transform: translateY(28px);
       animation: fadeUp 0.95s ease forwards;
@@ -449,6 +449,106 @@
     .signature-dot { width: 10px; height: 10px; border-radius: 999px; background: rgba(255,255,255,0.80); box-shadow: 0 0 20px rgba(255,255,255,0.7); flex-shrink: 0; }
     .signature-title { margin-top: 10px; font-size: 1.45rem; font-weight: 800; letter-spacing: -0.03em; color: rgba(255,255,255,0.96); }
 
+    .home-news-section {
+      padding: 0 0 80px;
+    }
+
+    .home-news-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .home-news-title {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .home-news-link {
+      text-decoration: none;
+      color: rgba(255,255,255,0.68);
+      font-size: 0.88rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .home-news-slider {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    }
+
+    .home-news-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: homeNewsMarquee 38s linear infinite;
+    }
+
+    .home-news-track:hover {
+      animation-play-state: paused;
+    }
+
+    .home-news-card {
+      width: 320px;
+      min-width: 320px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.35s ease, border-color 0.35s ease;
+    }
+
+    .home-news-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .home-news-card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .home-news-card-content {
+      padding: 16px;
+    }
+
+    .home-news-card-label {
+      font-size: 10px;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+    }
+
+    .home-news-card-title {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.94);
+    }
+
+    .home-news-card-meta {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.56);
+    }
+
     .features { padding: 0 0 80px; }
     .feature-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
     .feature-card {
@@ -538,6 +638,22 @@
         width: 320px;
       }
     }
+
+    @media (max-width: 768px) {
+      .home-news-card {
+        width: 280px;
+        min-width: 280px;
+      }
+
+      .home-news-card-image {
+        height: 160px;
+      }
+
+      .home-news-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body oncontextmenu="return false">
@@ -562,7 +678,7 @@
   </header>
 
   <nav class="mobile-menu" id="mobileMenu">
-     <a href="index.html">Ana Sayfa</a>
+    <a href="index.html">Ana Sayfa</a>
     <a href="iletisim.html">İletişim</a>
     <a href="oyunlar.html">Oyunlar</a>
     <a href="haberler.html">Haberler</a>
@@ -634,6 +750,31 @@
               </div>
               <div class="signature-title">Yeni Nesil İçerik ve Mini Oyun Platformu</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-news-section">
+      <div class="container">
+        <div class="home-news-head reveal">
+          <div>
+            <div class="mini-label">Ana Sayfa Haber Akışı</div>
+            <h2 class="home-news-title">Son Eklenen 5 Haber</h2>
+          </div>
+          <a href="haberler.html" class="home-news-link">Tüm Haberler</a>
+        </div>
+
+        <div class="home-news-slider reveal">
+          <div class="home-news-track" id="homeNewsTrack">
+            <a href="haberler.html" class="home-news-card">
+              <img src="yusacoder.jpg" alt="Haber yükleniyor" class="home-news-card-image" />
+              <div class="home-news-card-content">
+                <div class="home-news-card-label">Yükleniyor</div>
+                <div class="home-news-card-title">Haberler hazırlanıyor...</div>
+                <div class="home-news-card-meta">Lütfen bekleyin</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -764,6 +905,60 @@
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    async function loadHomeNews() {
+      const track = document.getElementById('homeNewsTrack');
+      if (!track) return;
+
+      try {
+        const response = await fetch('haberler.html');
+        const html = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const cards = [...doc.querySelectorAll('.news-card')].slice(0, 5);
+
+        if (!cards.length) {
+          track.innerHTML = '';
+          return;
+        }
+
+        const createCardHTML = (card) => {
+          const image = card.querySelector('.news-image')?.getAttribute('src') || 'yusacoder.jpg';
+          const label = card.querySelector('.mini-label')?.textContent?.trim() || 'Haber';
+          const title = card.querySelector('.news-title')?.textContent?.trim() || 'Başlık bulunamadı';
+          const meta = card.querySelector('.news-meta')?.textContent?.trim() || 'Detay bulunamadı';
+
+          return `
+            <a href="haberler.html" class="home-news-card">
+              <img src="${image}" alt="${title}" class="home-news-card-image" />
+              <div class="home-news-card-content">
+                <div class="home-news-card-label">${label}</div>
+                <div class="home-news-card-title">${title}</div>
+                <div class="home-news-card-meta">${meta}</div>
+              </div>
+            </a>
+          `;
+        };
+
+        const rendered = cards.map(createCardHTML).join('');
+        track.innerHTML = rendered + rendered;
+      } catch (error) {
+        track.innerHTML = `
+          <a href="haberler.html" class="home-news-card">
+            <img src="yusacoder.jpg" alt="Haber yüklenemedi" class="home-news-card-image" />
+            <div class="home-news-card-content">
+              <div class="home-news-card-label">Hata</div>
+              <div class="home-news-card-title">Haberler yüklenemedi</div>
+              <div class="home-news-card-meta">Daha sonra tekrar deneyin</div>
+            </div>
+          </a>
+        `;
+        console.log('Haberler çekilemedi:', error);
+      }
+    }
+
+    loadHomeNews();
 
     document.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'a', 'x'].includes(e.key.toLowerCase())) {
