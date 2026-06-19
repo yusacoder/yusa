@@ -654,9 +654,92 @@
         flex-direction: column;
       }
     }
+
+    .warning-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .warning-overlay.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .warning-content {
+      background: rgba(20, 20, 20, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      padding: 32px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      transform: translateY(20px);
+      transition: transform 0.5s ease;
+    }
+
+    .warning-overlay.show .warning-content {
+      transform: translateY(0);
+    }
+
+    .warning-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #ffffff;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .warning-text {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .warning-btn {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .warning-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
   </style>
 </head>
 <body oncontextmenu="return false">
+  <div id="iphoneWarning" class="warning-overlay">
+    <div class="warning-content">
+      <h2 class="warning-title">SİSTEM UYARISI</h2>
+      <p class="warning-text">
+        Sitemiz iPhone cihazlarda henüz tam optimize edilmemiştir.
+        Tasarımda kaymalar ve bazı işlevlerde sorunlar yaşayabilirsiniz.
+      </p>
+      <button class="warning-btn" onclick="closeWarning()">Anladım</button>
+    </div>
+  </div>
+
   <div class="background-layer" id="backgroundLayer"></div>
 
   <header class="navbar" id="navbar">
@@ -837,6 +920,23 @@
   </footer>
 
   <script>
+    const iphoneWarning = document.getElementById('iphoneWarning');
+
+    function showWarning() {
+      iphoneWarning.classList.add('show');
+    }
+
+    function closeWarning() {
+      iphoneWarning.classList.remove('show');
+      setTimeout(() => {
+        iphoneWarning.style.display = 'none';
+      }, 500);
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(showWarning, 1000);
+    });
+
     const navbar = document.getElementById('navbar');
     const backgroundLayer = document.getElementById('backgroundLayer');
     const menuBtn = document.getElementById('menuBtn');
