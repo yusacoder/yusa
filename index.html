@@ -726,6 +726,33 @@
       transform: scale(1.05);
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
+
+    .warning-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 24px 0;
+    }
+
+    .market-link {
+      display: inline-block;
+      background: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .market-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
   </style>
 </head>
 <body oncontextmenu="return false">
@@ -736,6 +763,17 @@
         Sitemiz iPhone cihazlarda henüz tam optimize edilmemiştir.
         Tasarımda kaymalar ve bazı işlevlerde sorunlar yaşayabilirsiniz.
       </p>
+
+      <div class="warning-divider"></div>
+
+      <h2 class="warning-title">YUSACODER MARKET</h2>
+      <p class="warning-text">
+        Oyun hesapları, UC, VP, Steam cüzdan kodu ve çok daha fazlası için yeni sitemizi ziyaret edin!
+      </p>
+      <a href="https://market.yusacoder.com" target="_blank" class="market-link">MARKETE GİT</a>
+
+      <div class="warning-divider"></div>
+
       <button class="warning-btn" onclick="closeWarning()">Anladım</button>
     </div>
   </div>
