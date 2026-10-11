@@ -2,10 +2,12 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>YusaCoder | Haberler</title>
   <link rel="canonical" href="https://yusacoder.com/haberler.html">
-  <meta name="description" content="YusaCoder haberler sayfası. Güncel içerikler, duyurular ve manuel eklenen haber kartları." />
+  <meta name="description" content="YusaCoder haberler sayfası. Güncel içerikler, duyurular ve JSON tabanlı haber kartları." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,8 +47,13 @@
         linear-gradient(180deg, #090909 0%, #060606 35%, #050505 100%);
       color: var(--text);
       min-height: 100vh;
+      min-height: 100dvh;
       overflow-x: hidden;
       position: relative;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
       -webkit-user-select: none;
       user-select: none;
       -webkit-touch-callout: none;
@@ -140,6 +147,7 @@
       z-index: 1000;
       transition: background 0.6s ease, backdrop-filter 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
       border-bottom: 1px solid transparent;
+      padding-top: env(safe-area-inset-top);
     }
 
     .navbar.scrolled {
@@ -268,7 +276,7 @@
 
     .mobile-menu {
       position: fixed;
-      top: 78px;
+      top: calc(78px + env(safe-area-inset-top));
       left: 12px;
       right: 12px;
       z-index: 999;
@@ -414,7 +422,7 @@
       border: none;
       outline: none;
       color: rgba(255,255,255,0.95);
-      font-size: 0.98rem;
+      font-size: 16px;
       font-family: inherit;
     }
 
@@ -572,6 +580,7 @@
       border: none;
       cursor: pointer;
       font-family: inherit;
+      touch-action: manipulation;
     }
 
     .btn-primary {
@@ -608,7 +617,9 @@
     .news-modal-box {
       width: min(100%, 760px);
       max-height: 88vh;
+      max-height: 88dvh;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       border-radius: 28px;
       border: 1px solid rgba(255,255,255,0.10);
       background: linear-gradient(180deg, rgba(20,20,20,0.96), rgba(10,10,10,0.94));
@@ -904,603 +915,7 @@
     <section class="news-section">
       <div class="container">
         <div class="news-grid" id="newsGrid">
-
-<article class="news-card">
-<img src="https://foto.haberler.com/haber/2026/04/23/okullarda-yeni-donem-iste-7-basamakli-yeni_6d069b3b3a_amp.jpg"
-class="news-image"
-alt="Okullarda yeni güvenlik tedbirleri" />
-
-<div class="news-content">
-<div class="news-author-row">
-<img src="yusacoder.jpg" class="news-author-avatar" alt="Admin">
-<div class="news-author-info">
-<div class="news-author-name">YusaCoder</div>
-<div class="news-author-sub">Tarafından eklendi</div>
-</div>
-</div>
-
-<div class="mini-label">Türkiye / Eğitim / 24 Nisan 2026</div>
-
-<h2 class="news-title">
-Okullarda alınacak 7 yeni güvenlik tedbiri açıklandı
-</h2>
-
-<p class="news-meta">
-Eğitim • Güvenlik • Son Dakika
-</p>
-
-<p class="news-summary">
-Son olayların ardından okullarda güvenlik önlemleri artırılıyor.
-Giriş kontrolleri, kamera sistemleri ve öğrenci güvenliği için
-7 maddelik yeni tedbir gündemde.
-</p>
-
-<div class="news-actions">
-<button
-class="btn-primary open-news-modal"
-data-title="Okullarda alınacak 7 yeni güvenlik tedbiri açıklandı"
-data-meta="24 Nisan 2026 • Eğitim Gündemi"
-data-image="https://image.milimaj.com/i/milliyet/75/0x0/69eb2d843e5a0a045c5c1256.jpg"
-data-author-name="YusaCoder"
-data-author-sub="Tarafından eklendi"
-data-author-avatar="yusacoder.jpg"
-data-detail="Son günlerde yaşanan olaylar sonrası eğitim kurumlarında yeni güvenlik önlemleri gündeme geldi. Taslak tedbirler arasında okul giriş denetimlerinin artırılması, kamera altyapılarının güçlendirilmesi, ziyaretçi kontrolleri ve acil durum protokollerinin güncellenmesi gibi başlıklar yer alıyor. Düzenlemenin öğrenci güvenliğini artırması hedefleniyor."
->
-Tamamını Oku
-</button>
-</div>
-</div>
-</article>
-
-<article class="news-card">
-<img src="https://www.tosfed.org.tr/wp-content/uploads/2026/04/Formula1-Lansman-24042026-02.jpg"
-class="news-image"
-alt="Formula 1 Türkiye haberi" />
-
-<div class="news-content">
-<div class="news-author-row">
-<img src="yusacoder.jpg" class="news-author-avatar" alt="Admin">
-<div class="news-author-info">
-<div class="news-author-name">YusaCoder</div>
-<div class="news-author-sub">Tarafından eklendi</div>
-</div>
-</div>
-
-<div class="mini-label">Spor / Formula 1 / 24 Nisan 2026</div>
-
-<h2 class="news-title">
-Formula 1 yeniden Türkiye gündeminde
-</h2>
-
-<p class="news-meta">
-Motor Sporları • İstanbul Park • 24 Nisan
-</p>
-
-<p class="news-summary">
-Formula 1'in yeniden Türkiye takvimine dönme ihtimali
-spor gündeminde dikkat çekti. İstanbul Park iddiaları konuşuluyor.
-</p>
-
-<div class="news-actions">
-<button
-class="btn-primary open-news-modal"
-data-title="Formula 1 yeniden Türkiye gündeminde"
-data-meta="24 Nisan 2026 • Spor"
-data-image="https://foto.haberler.com/haber/2026/04/24/formula-1-yeniden-turkiye-de_amp.jpg"
-data-author-name="YusaCoder"
-data-author-sub="Tarafından eklendi"
-data-author-avatar="yusacoder.jpg"
-data-detail="Formula 1 organizasyonunun yeniden Türkiye'de yarış düzenleyebileceği iddiaları gündem oldu. İstanbul Park ismi tekrar ön plana çıkarken motor sporları takipçileri gelişmeleri yakından izliyor. Resmi takvim konusunda görüşmelerin sürdüğü belirtiliyor."
->
-Tamamını Oku
-</button>
-</div>
-</div>
-</article>
-<article class="news-card">
-  <img src="https://foto.haberler.com/haber/2026/04/24/cocuk-suclularin-cezalari-artiyor-aileler-de_49650be74d_amp.jpg"
-       alt="Suça sürüklenen çocuklara yönelik yeni yasal düzenleme haberi"
-       class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Türkiye / Hukuk / 24 Nisan 2026</div>
-
-    <h2 class="news-title">
-      Suça sürüklenen çocuklara yönelik yeni düzenlemede sona gelindi
-    </h2>
-
-    <p class="news-meta">
-      Yargı düzenlemesi • 15-18 yaş • 24 Nisan 2026
-    </p>
-
-    <p class="news-summary">
-      15-18 yaş grubuna ilişkin ceza düzenlemelerinde değişiklik öngören
-      taslakta sona yaklaşıldığı belirtiliyor. Üst ceza sınırları ve aile
-      sorumluluğu başlıkları gündemde.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Suça sürüklenen çocuklara yönelik yeni düzenlemede sona gelindi"
-        data-meta="24 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://foto.haberler.com/haber/2026/04/24/cocuk-suclularin-cezalari-artiyor-aileler-de_49650be74d_amp.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="24 Nisan'da gündeme yansıyan taslak çalışmaya göre, suça sürüklenen çocuklara yönelik ceza sisteminde bazı değişiklikler değerlendiriliyor. Özellikle 15-18 yaş grubuna verilen hapis cezalarının üst sınırlarında artış ve ağır suçlarda hakime daha geniş takdir yetkisi tanınması konuşuluyor. Düzenleme taslağında aile sorumluluğunu artıran maddeler de öne çıkarken, bazı suçlarda şikayet olmasa dahi yargı sürecinin işletilebilmesine ilişkin başlıklar dikkat çekiyor. Yetkililer düzenlemenin çocuk suçluluğuyla mücadele, caydırıcılık ve aile denetimini güçlendirme amacı taşıdığını belirtirken, taslak üzerindeki değerlendirmelerin sürdüğü ifade ediliyor."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-<article class="news-card">
-  <img src="https://foto.haberler.com/haber/2026/04/23/nuri-sahin-arda-gulere-yaptigi-teklifi-ilk-kez_d53725857b_amp.jpg" alt="Nuri Şahin ve Arda Güler haberi görseli" class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Spor / Gündem / 23 Nisan 2026</div>
-    <h2 class="news-title">Nuri Şahin, Arda Güler'e yaptığı teklifi ilk kez açıkladı: O takıma çok istedim</h2>
-    <p class="news-meta">Futbol • Arda Güler • 23 Nisan 2026</p>
-    <p class="news-summary">
-      Nuri Şahin, teknik direktörlük yaptığı dönemde Arda Güler’i kadrosuna katmak istediğini
-      ilk kez açıkladı. Genç yıldızın verdiği cevap ise dikkat çekti.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Nuri Şahin, Arda Güler'e yaptığı teklifi ilk kez açıkladı: O takıma çok istedim"
-        data-meta="23 Nisan 2026 • Spor Gündemi"
-        data-image="https://foto.haberler.com/haber/2026/04/23/nuri-sahin-arda-gulere-yaptigi-teklifi-ilk-kez_d53725857b_amp.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="23 Nisan 2026’da yapılan açıklamalarda Nuri Şahin, Borussia Dortmund’u çalıştırdığı dönemde Arda Güler’i kadrosuna katmayı çok istediğini söyledi. Şahin, genç futbolcuyla yaptığı görüşmede Arda Güler’in 'Ne olursa olsun bu formayı kapacağım' dediğini anlattı. Bu sözlerden etkilendiğini belirten Şahin, o dönem kendisine başarı dileğinde bulunduğunu ve Arda’nın kısa süre içinde hedeflediği formayı gerçekten kazandığını ifade etti. Açıklamalar, futbol gündeminde günün en çok konuşulan başlıklarından biri oldu."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-          
-          <article class="news-card">
-  <img src="https://foto.haberler.com/haber/2022/01/31/son-dakika-4-14703604_2456_amp.jpg" alt="Hürmüz Boğazı'ndaki gerginliğe ilişkin haber görseli" class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Dünya / Gündem / 23 Nisan 2026</div>
-    <h2 class="news-title">Ateşkes sürerken Hürmüz Boğazı’nda gerginlik tırmanıyor</h2>
-    <p class="news-meta">İran • ABD • Hürmüz Boğazı</p>
-    <p class="news-summary">
-      İran ile ABD arasında ateşkes sürse de Hürmüz Boğazı’nda tansiyon düşmedi.
-      ABD Başkanı Donald Trump, boğaza mayın döşemeye çalışan teknelere karşı sert talimat verdiğini açıkladı.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Ateşkes sürerken Hürmüz Boğazı’nda gerginlik tırmanıyor"
-        data-meta="23 Nisan 2026 • Dünya Gündemi"
-        data-image="https://foto.haberler.com/haber/2022/01/31/son-dakika-4-14703604_2456_amp.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="23 Nisan 2026’da yayımlanan haberlere göre, İran ile ABD arasındaki ateşkes devam ederken Hürmüz Boğazı çevresindeki gerginlik sürüyor. ABD Başkanı Donald Trump, boğaza mayın döşemeye çalışan teknelere karşı ABD Donanması’na sert talimat verdiğini açıkladı. Aynı gün uluslararası haber akışında, ABD’nin mayın temizleme faaliyetlerini artırdığı ve boğaz çevresindeki askeri hareketliliğin sürdüğü aktarıldı. Hürmüz Boğazı, dünya enerji sevkiyatı açısından kritik öneme sahip olduğu için bölgedeki her gelişme küresel piyasalar tarafından yakından izleniyor."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-          </article>
-
-          
-<article class="news-card">
-  <img src="https://foto.haberler.com/haber/2026/04/07/tokat-ta-sarampole-devrilen-otomobildeki-2-ki-19774117_amp.jpg" alt="Tokat'ta şarampole devrilen otomobil kazası haber görseli" class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Türkiye / Asayiş / 7 Nisan 2026</div>
-    <h2 class="news-title">Tokat'ta şarampole devrilen otomobildeki 2 kişi yaralandı</h2>
-    <p class="news-meta">Tokat • Trafik kazası • 7 Nisan 2026</p>
-    <p class="news-summary">
-      Tokat’ta kontrolden çıkarak şarampole devrilen otomobilde bulunan
-      2 kişi yaralandı. Olay yerine sağlık ve güvenlik ekipleri sevk edildi.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Tokat'ta şarampole devrilen otomobildeki 2 kişi yaralandı"
-        data-meta="7 Nisan 2026 • Türkiye Asayiş"
-        data-image="https://foto.haberler.com/haber/2026/04/07/tokat-ta-sarampole-devrilen-otomobildeki-2-ki-19774117_amp.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="7 Nisan 2026 tarihinde Tokat’ta meydana gelen trafik kazasında, seyir halindeki bir otomobil kontrolden çıkarak şarampole devrildi. Kazada araçta bulunan 2 kişi yaralandı. İhbar üzerine olay yerine sağlık ve güvenlik ekipleri sevk edilirken, yaralılar ilk müdahalenin ardından hastaneye kaldırıldı. Kazayla ilgili inceleme başlatıldı."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-          
-          <article class="news-card">
-  <img src="https://foto.haberler.com/haber/2026/04/23/kahramanmaras-ta-23-nisan-kutlandi-19776270_amp.jpg" alt="Kahramanmaraş'ta 23 Nisan kutlamaları haber görseli" class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Türkiye / Gündem / 23 Nisan 2026</div>
-    <h2 class="news-title">Kahramanmaraş'ta 23 Nisan kutlamaları okul saldırısı nedeniyle sade geçti</h2>
-    <p class="news-meta">Kahramanmaraş • 23 Nisan • Eğitim</p>
-    <p class="news-summary">
-      Kahramanmaraş’ta 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı kutlamaları,
-      kısa süre önce yaşanan okul saldırısının ardından bu yıl daha sade bir atmosferde gerçekleştirildi.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Kahramanmaraş'ta 23 Nisan kutlamaları okul saldırısı nedeniyle sade geçti"
-        data-meta="23 Nisan 2026 • Türkiye Gündemi"
-        data-image="https://foto.haberler.com/haber/2026/04/23/kahramanmaras-ta-23-nisan-kutlandi-19776270_amp.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="23 Nisan 2026’da Kahramanmaraş’ta düzenlenen Ulusal Egemenlik ve Çocuk Bayramı etkinlikleri, kısa süre önce yaşanan okul saldırısının gölgesinde gerçekleşti. Bu nedenle kentteki kutlamalar önceki yıllara göre daha sade tutuldu. Programlarda çocukların bayram coşkusu korunmaya çalışılırken, yaşanan olayın etkisi nedeniyle törende duygusal anlar da yaşandı. Kentte yapılan etkinliklerde hem bayramın anlam ve önemi vurgulandı hem de saldırıda etkilenen öğrenciler için hassas bir atmosfer gözetildi."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-          </article>
-          
-<article class="news-card">
-  <img src="https://foto.haberler.com/haber/2026/04/22/sosyal-medyaya-ve-dogum-iznine-yonelik-19774903_6672_amp.jpg" alt="Sosyal medyaya 15 yaş sınırı düzenlemesi haber görseli" class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Türkiye / Teknoloji / 22 Nisan 2026</div>
-    <h2 class="news-title">Instagram ve sosyal medya için 15 yaş altına yeni sınırlama geldi</h2>
-    <p class="news-meta">TBMM • Sosyal medya düzenlemesi • 22 Nisan 2026</p>
-    <p class="news-summary">
-      Meclis’te kabul edilen yeni düzenlemeyle, 15 yaşını doldurmamış çocuklara
-      sosyal ağ sağlayıcılar hizmet sunamayacak. Platformlara yaş doğrulama ve
-      çocuklara özel koruma önlemleri yükümlülüğü getirildi.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Instagram ve sosyal medya için 15 yaş altına yeni sınırlama geldi"
-        data-meta="22 Nisan 2026 • Türkiye Teknoloji Gündemi"
-        data-image="https://foto.haberler.com/haber/2026/04/22/sosyal-medyaya-ve-dogum-iznine-yonelik-19774903_6672_amp.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="22 Nisan 2026’da TBMM Genel Kurulu’nda kabul edilen düzenlemeye göre, sosyal ağ sağlayıcılar 15 yaşını doldurmamış çocuklara hizmet veremeyecek. Bu hizmetin sunulmaması için yaş doğrulama dahil gerekli tedbirleri almak platformların sorumluluğunda olacak. Düzenleme ayrıca, 15 yaşını doldurmuş çocuklara özgü ayrıştırılmış hizmet sunulması ve ebeveyn kontrol araçlarının sağlanması yönünde de yükümlülükler içeriyor. Böylece çocukların dijital ortamlarda daha güvenli şekilde korunması amaçlanıyor."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-
-          
-          <article class="news-card">
-  <img src="https://www.niksardanismend.com/images/haberler/2026/04/bu-isin-sakasi-yok-niksar-da-okulu-tarayacagim-diyen-ogrenci-gozaltina-alindi-7412.jpg" alt="Niksar'da ortaokulda tehdit iddiası haber görseli" class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Türkiye / Asayiş / 21 Nisan 2026</div>
-    <h2 class="news-title">Niksar’da ortaokul öğrencisi tehdit iddiasıyla gözaltına alındı</h2>
-    <p class="news-meta">Tokat • Niksar • 21 Nisan 2026</p>
-    <p class="news-summary">
-      Tokat’ın Niksar ilçesindeki bir ortaokulda, 7. sınıf öğrencisinin
-      arkadaşlarına yönelik tehditte bulunduğu iddiası üzerine şüpheli çocuk gözaltına alındı.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Niksar’da ortaokul öğrencisi tehdit iddiasıyla gözaltına alındı"
-        data-meta="21 Nisan 2026 • Türkiye Asayiş"
-        data-image="https://www.niksardanismend.com/images/haberler/2026/04/bu-isin-sakasi-yok-niksar-da-okulu-tarayacagim-diyen-ogrenci-gozaltina-alindi-7412.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="21 Nisan 2026 tarihli yerel haberlere göre, Tokat’ın Niksar ilçesindeki bir ortaokulda öğrenim gören 7. sınıf öğrencisinin sınıf arkadaşlarına yönelik tehditte bulunduğu iddiası üzerine resmi süreç başlatıldı. Haberde, bazı öğrencilerin arkadaşlarının kendilerine tehdit içerikli sözler söylediğini bildirmesi üzerine olayın emniyete taşındığı aktarıldı. İddialar doğrultusunda şüpheli çocuk kısa sürede gözaltına alındı. Olayla ilgili işlemlerin çocuk adli sistemi kapsamında sürdüğü belirtildi."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-
-          
-<article class="news-card">
-  <img src="https://foto.haberler.com/haber/2026/04/20/samsunda-tas-kafa-tirasi-yasaklandi_ff0d40db7f_amp.jpg" alt="Samsun'da lisede saç modeli tartışması haber görseli" class="news-image" />
-
-  <div class="news-content">
-    <div class="news-author-row">
-      <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-      <div class="news-author-info">
-        <div class="news-author-name">YusaCoder</div>
-        <div class="news-author-sub">Tarafından eklendi</div>
-      </div>
-    </div>
-
-    <div class="mini-label">Türkiye / Eğitim / 20 Nisan 2026</div>
-    <h2 class="news-title">Samsun’da bir lisede “tas kafa” tıraşına izin verilmediği iddiası gündem oldu</h2>
-    <p class="news-meta">Samsun • Okul güvenliği • 20 Nisan 2026</p>
-    <p class="news-summary">
-      Okullarda güvenlik önlemleri tartışılırken, Samsun’daki bir lisede
-      “tas kafa” olarak bilinen çok kısa saç modeline izin verilmediği yönündeki
-      iddialar dikkat çekti.
-    </p>
-
-    <div class="news-actions">
-      <button
-        type="button"
-        class="btn-primary open-news-modal"
-        data-title="Samsun’da bir lisede “tas kafa” tıraşına izin verilmediği iddiası gündem oldu"
-        data-meta="20 Nisan 2026 • Türkiye Eğitim Gündemi"
-        data-image="https://foto.haberler.com/haber/2026/04/20/samsunda-tas-kafa-tirasi-yasaklandi_ff0d40db7f_amp.jpg"
-        data-author-name="YusaCoder"
-        data-author-sub="Tarafından eklendi"
-        data-author-avatar="yusacoder.jpg"
-        data-detail="20 Nisan 2026 tarihinde yayımlanan haberlere göre, Şanlıurfa ve Kahramanmaraş’taki okul saldırılarının ardından güvenlik önlemleri yeniden tartışılmaya başlandı. Bu süreçte Samsun’daki bir lisede “tas kafa” olarak bilinen çok kısa saç modeline izin verilmediği yönünde iddialar gündeme geldi. Haberde, öğrenciler ve veliler arasında paylaşılan bilgilere göre okul yönetiminin saç kesimine ilişkin yeni bir düzenleme yaptığı ve aşırı kısa saç modellerini uygun bulmadığının öne sürüldüğü aktarıldı. Konu, okul disiplin uygulamaları ve güvenlik tartışmalarının bir parçası olarak kamuoyunda dikkat çekti."
-      >
-        Tamamını Oku
-      </button>
-    </div>
-  </div>
-</article>
-          
-          <article class="news-card">
-            <img src="https://konyayeniguncom.teimg.com/crop/1280x720/konyayenigun-com/uploads/2026/04/kirmizi-ve-beyaz-modern-son-dakika-haberleri-youtube-kucuk-resmi-45-9.jpg" alt="Cumhurbaşkanı Erdoğan okul güvenliği açıklaması haber görseli" class="news-image" />
-            <div class="news-content">
-              <div class="news-author-row">
-                <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-                <div class="news-author-info">
-                  <div class="news-author-name">YusaCoder</div>
-                  <div class="news-author-sub">Tarafından eklendi</div>
-                </div>
-              </div>
-
-              <div class="mini-label">Türkiye / Gündem / 20 Nisan 2026</div>
-              <h2 class="news-title">Erdoğan: Okullarımızın güvenliği önceliklerimizin en başındadır</h2>
-              <p class="news-meta">Cumhurbaşkanlığı • Eğitim güvenliği • 20 Nisan 2026</p>
-              <p class="news-summary">
-                Cumhurbaşkanı Recep Tayyip Erdoğan, son günlerde yaşanan olayların ardından
-                okul güvenliği konusunda taviz verilmeyeceğini söyledi.
-              </p>
-
-              <div class="news-actions">
-                <button
-                  type="button"
-                  class="btn-primary open-news-modal"
-                  data-title="Erdoğan: Okullarımızın güvenliği önceliklerimizin en başındadır"
-                  data-meta="20 Nisan 2026 • Türkiye Gündemi"
-                  data-image="https://konyayeniguncom.teimg.com/crop/1280x720/konyayenigun-com/uploads/2026/04/kirmizi-ve-beyaz-modern-son-dakika-haberleri-youtube-kucuk-resmi-45-9.jpg"
-                  data-author-name="YusaCoder"
-                  data-author-sub="Tarafından eklendi"
-                  data-author-avatar="yusacoder.jpg"
-                  data-detail="20 Nisan 2026’da Anadolu Ajansı’nda yer alan habere göre Cumhurbaşkanı Recep Tayyip Erdoğan, okul güvenliği meselesinin devletin öncelikleri arasında ilk sırada yer aldığını belirtti. Açıklamada, bu konuda en küçük bir taviz verilmeyeceği vurgulandı. Son günlerde yaşanan saldırıların ardından güvenlik tedbirlerinin daha sıkı şekilde uygulanacağı mesajı öne çıktı."
-                >
-                  Tamamını Oku
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <img src="https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/04/16/aw684193-06-u3ic_cover.jpg" alt="Okul saldırıları sonrası gözaltı kararı haber görseli" class="news-image" />
-            <div class="news-content">
-              <div class="news-author-row">
-                <img src="yusacoder.jpg" alt="Admin profil" class="news-author-avatar" />
-                <div class="news-author-info">
-                  <div class="news-author-name">YusaCoder</div>
-                  <div class="news-author-sub">Tarafından eklendi</div>
-                </div>
-              </div>
-
-              <div class="mini-label">Türkiye / Asayiş / 20 Nisan 2026</div>
-              <h2 class="news-title">Okul saldırılarının ardından 25 şüpheli hakkında gözaltı kararı</h2>
-              <p class="news-meta">Sosyal medya • Tehdit paylaşımları • 20 Nisan 2026</p>
-              <p class="news-summary">
-                Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından tehdit içerikli
-                paylaşım yaptığı belirtilen 25 kişi hakkında gözaltı kararı verildi.
-              </p>
-
-              <div class="news-actions">
-                <button
-                  type="button"
-                  class="btn-primary open-news-modal"
-                  data-title="Okul saldırılarının ardından 25 şüpheli hakkında gözaltı kararı"
-                  data-meta="20 Nisan 2026 • Türkiye Asayiş"
-                  data-image="https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/04/16/aw684193-06-u3ic_cover.jpg"
-                  data-author-name="YusaCoder"
-                  data-author-sub="Tarafından eklendi"
-                  data-author-avatar="yusacoder.jpg"
-                  data-detail="20 Nisan 2026’da yayımlanan haberlere göre, Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından sosyal medyada tehdit içerikli paylaşımlar yapan 25 şüpheli hakkında gözaltı kararı verildi. Haberlerde, bu kişilerden 13’ünün 18 yaşından küçük olduğu belirtildi. Soruşturmanın, kamuoyunda korku ve panik oluşturan paylaşımlar üzerine başlatıldığı aktarıldı."
-                >
-                  Tamamını Oku
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <img src="https://imgrosetta.mynet.com.tr/file/13186972/13186972-860x480.jpg" alt="Okula göndermeyen velilere ceza iddiaları haber görseli" class="news-image" />
-            <div class="news-content">
-              <div class="news-author-row">
-                <img src="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" alt="Admin profil" class="news-author-avatar" />
-                <div class="news-author-info">
-                  <div class="news-author-name">YusaCoder</div>
-                  <div class="news-author-sub">Tarafından eklendi</div>
-                </div>
-              </div>
-
-              <div class="mini-label">Türkiye / Eğitim / 18 Nisan 2026</div>
-              <h2 class="news-title">Okula göndermeyen velilere ceza iddiası yeniden gündemde: Yeni yasa değil, eski düzenleme</h2>
-              <p class="news-meta">222 sayılı Kanun • Eğitim • 18 Nisan 2026</p>
-              <p class="news-summary">
-                Sosyal medyada “yeni çıktı” diye paylaşılan veli cezaları konusunda,
-                mevcut düzenlemenin aslında uzun süredir yürürlükte olduğu ve yeniden
-                gündeme getirildiği görülüyor.
-              </p>
-
-              <div class="news-actions">
-                <button
-                  type="button"
-                  class="btn-primary open-news-modal"
-                  data-title="Okula göndermeyen velilere ceza iddiası yeniden gündemde: Yeni yasa değil, eski düzenleme"
-                  data-meta="18 Nisan 2026 • Türkiye Eğitim Gündemi"
-                  data-image="https://imgrosetta.mynet.com.tr/file/13186972/13186972-860x480.jpg"
-                  data-author-name="YusaCoder"
-                  data-author-sub="Tarafından eklendi"
-                  data-author-avatar="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg"
-                  data-detail="18 Nisan 2026’da sosyal medyada yeniden dolaşıma giren paylaşımlarda, çocuğunu okula göndermeyen velilere günlük para cezası uygulanacağı ve daha ağır yaptırımların gündeme geleceği iddia edildi. Yapılan incelemede bunun sıfırdan çıkarılmış yeni bir yasa değil, 222 sayılı İlköğretim ve Eğitim Kanunu’nda uzun süredir bulunan yaptırımların yeniden haberleştirildiği anlaşıldı. Kanun metninde çocuğunu okula göndermeyen veli için günlük 15 TL idari para cezası ve devam eden durumda 500 TL ek ceza ifadeleri yer alıyor. Ancak yakın dönem uygulama haberlerinde bu tutarların güncel idari para cezası hesaplamaları nedeniyle daha yüksek rakamlarla yer aldığı görüldü. Şanlıurfa’daki resmi açıklamalarda günlük 257 TL ve ek olarak 11 bin 977 TL düzeyinde yaptırımlardan söz edildi. Ayrıca eğitim hakkının engellenmesine ilişkin daha ağır ve özel durumlarda Türk Ceza Kanunu’nun 112. maddesi kapsamında adli süreç de ayrı bir başlık olarak gündeme gelebiliyor. Bu nedenle sosyal medyadaki “bugün yeni yasa çıktı” paylaşımlarının eksik ve yanıltıcı şekilde sunulduğu değerlendiriliyor."
-                >
-                  Tamamını Oku
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <img src="https://cdn.sivasirade.com/news/91276.jpg" alt="Sivas'ta tehdit paylaşımı yapan öğrencinin tutuklanması haber görseli" class="news-image" />
-            <div class="news-content">
-              <div class="news-author-row">
-                <img src="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" alt="Admin profil" class="news-author-avatar" />
-                <div class="news-author-info">
-                  <div class="news-author-name">YusaCoder</div>
-                  <div class="news-author-sub">Tarafından eklendi</div>
-                </div>
-              </div>
-
-              <div class="mini-label">Türkiye / Gündem / 16 Nisan 2026</div>
-              <h2 class="news-title">“Yarın Sivas’ta yeni bir haber duyacaksınız” paylaşımı yapan 10. sınıf öğrencisi tutuklandı</h2>
-              <p class="news-meta">Sivas • Tehdit paylaşımı • Adli süreç</p>
-              <p class="news-summary">
-                Sivas’ta sosyal medyada okullara yönelik tehdit algısı oluşturan paylaşım yaptığı
-                belirlenen 10. sınıf öğrencisi, emniyetteki işlemlerinin ardından tutuklandı.
-              </p>
-
-              <div class="news-actions">
-                <button
-                  type="button"
-                  class="btn-primary open-news-modal"
-                  data-title="“Yarın Sivas’ta yeni bir haber duyacaksınız” paylaşımı yapan 10. sınıf öğrencisi tutuklandı"
-                  data-meta="16 Nisan 2026 • Türkiye Gündemi"
-                  data-image="https://cdn.sivasirade.com/news/91276.jpg"
-                  data-author-name="YusaCoder"
-                  data-author-sub="Tarafından eklendi"
-                  data-author-avatar="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg"
-                  data-detail="16 Nisan 2026 tarihli haberlere göre, Sivas’ta sosyal medyada yayılan “Yarın Sivas’ta yeni bir haber duyacaksınız” paylaşımı üzerine soruşturma başlatıldı. Yapılan incelemelerde paylaşımın, bir sohbet kanalında “Bufalo58” kullanıcı adıyla dolaşıma sokulduğu ve bunu yapan kişinin 10. sınıf öğrencisi E.A. olduğu belirlendi. İl Emniyet Müdürlüğü ekipleri tarafından gözaltına alınan öğrenci, emniyetteki işlemlerinin ardından adliyeye sevk edildi. Şüpheli, çıkarıldığı mahkemece tutuklanarak cezaevine gönderildi. Olay, son günlerde okullara yönelik tehdit içerikli paylaşımlar nedeniyle yürütülen soruşturmaların bir parçası olarak gündeme geldi."
-                >
-                  Tamamını Oku
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="news-card">
-            <img src="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2440000/trump-iran-hurmuz-2440350_1.jpg" alt="Hürmüz Boğazı gerilimi haber görseli" class="news-image" />
-            <div class="news-content">
-              <div class="news-author-row">
-                <img src="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg" alt="Admin profil" class="news-author-avatar" />
-                <div class="news-author-info">
-                  <div class="news-author-name">YusaCoder</div>
-                  <div class="news-author-sub">Tarafından eklendi</div>
-                </div>
-              </div>
-
-              <div class="mini-label">Dünya / Gündem / 18 Nisan 2026</div>
-              <h2 class="news-title">İran Güvenlik Konseyi: Abluka sürerse Hürmüz Boğazı’ndan geçişler engellenecek</h2>
-              <p class="news-meta">İran • ABD ablukası • Enerji hattı</p>
-              <p class="news-summary">
-                İran Ulusal Güvenlik Yüksek Konseyi, ABD’nin deniz ablukasını sürdürmesi halinde
-                Hürmüz Boğazı’ndaki geçişlerin yeniden engellenebileceğini duyurdu.
-              </p>
-
-              <div class="news-actions">
-                <button
-                  type="button"
-                  class="btn-primary open-news-modal"
-                  data-title="İran Güvenlik Konseyi: Abluka sürerse Hürmüz Boğazı’ndan geçişler engellenecek"
-                  data-meta="18 Nisan 2026 • Dünya Gündemi"
-                  data-image="https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2440000/trump-iran-hurmuz-2440350_1.jpg"
-                  data-author-name="YusaCoder"
-                  data-author-sub="Tarafından eklendi"
-                  data-author-avatar="https://www.shutterstock.com/image-vector/yc-monogram-logo-design-special-260nw-1856756026.jpg"
-                  data-detail="18 Nisan 2026’da yayımlanan haberlere göre İran Ulusal Güvenlik Yüksek Konseyi, ABD’nin deniz ablukası benzeri yollarla gemi geçişlerini engellemeye devam etmesini ateşkes ihlali sayacağını açıkladı. Konsey, böyle bir durumda İran’ın Hürmüz Boğazı’nın şartlı ve sınırlı biçimde açılmasını da engelleyebileceğini bildirdi. Güncel uluslararası haber akışında da İran’ın boğazdaki geçişleri yeniden sınırladığı, bazı gemiler için koordinasyon ve kontrol uygulamalarını sürdürdüğü aktarıldı. Gelişme, küresel enerji taşımacılığı açısından kritik önemdeki Hürmüz Boğazı çevresindeki gerilimin yeniden yükseldiğine işaret ediyor."
-                >
-                  Tamamını Oku
-                </button>
-              </div>
-            </div>
-          </article>
-
+          <!-- Dynamically populated from haberler.json -->
         </div>
 
         <div class="search-empty" id="searchEmptyBottom" style="display:none; margin-top:18px;">
@@ -1517,10 +932,10 @@ Tamamını Oku
       <img id="modalNewsImage" src="" alt="Haber görseli" class="news-modal-image" />
 
       <div class="news-modal-content">
-        <div class="modal-author-row" id="modalAuthorRow" style="display:none;">
+        <div class="modal-author-row" id="modalAuthorRow">
           <img id="modalAuthorAvatar" src="" alt="Admin profil" class="modal-author-avatar" />
           <div class="modal-author-info">
-            <div class="modal-author-name" id="modalAuthorName">YusaCoder Admin</div>
+            <div class="modal-author-name" id="modalAuthorName">YusaCoder</div>
             <div class="modal-author-sub" id="modalAuthorSub">Tarafından eklendi</div>
           </div>
         </div>
@@ -1633,31 +1048,110 @@ Tamamını Oku
     const modalAuthorName = document.getElementById('modalAuthorName');
     const modalAuthorSub = document.getElementById('modalAuthorSub');
 
-    document.querySelectorAll('.open-news-modal').forEach((button) => {
-      button.addEventListener('click', () => {
-        modalNewsTitle.textContent = button.dataset.title || 'Haber Başlığı';
-        modalNewsMeta.textContent = button.dataset.meta || 'Kategori / Tarih';
-        modalNewsImage.src = button.dataset.image || '';
-        modalNewsDetail.textContent = button.dataset.detail || 'Detay metni bulunamadı.';
+    let allArticles = [];
+    let profilesMap = {};
+    let defaultProfiles = [];
 
-        const authorName = button.dataset.authorName;
-        const authorSub = button.dataset.authorSub;
-        const authorAvatar = button.dataset.authorAvatar;
+    function resolveAuthor(article) {
+      if (article.authorId && profilesMap[article.authorId]) {
+        return profilesMap[article.authorId];
+      }
+      if (defaultProfiles.length > 0) {
+        const index = Math.abs((article.id || 0)) % defaultProfiles.length;
+        return defaultProfiles[index];
+      }
+      return {
+        name: 'YusaCoder',
+        sub: 'Tarafından eklendi',
+        avatar: 'yusacoder.jpg'
+      };
+    }
 
-        if (authorName || authorSub || authorAvatar) {
+    function renderArticles(articles) {
+      const newsGrid = document.getElementById('newsGrid');
+      if (!newsGrid) return;
+
+      if (!articles || articles.length === 0) {
+        newsGrid.innerHTML = `<div class="search-empty" style="display:block;">Henüz eklenmiş haber bulunmuyor.</div>`;
+        return;
+      }
+
+      newsGrid.innerHTML = articles.map((art) => {
+        const author = resolveAuthor(art);
+        const cardImg = art.image || 'yusacoder.jpg';
+
+        return `
+          <article class="news-card">
+            <img src="${cardImg}" class="news-image" alt="${art.title}" />
+            <div class="news-content">
+              <div class="news-author-row">
+                <img src="${author.avatar}" class="news-author-avatar" alt="${author.name}">
+                <div class="news-author-info">
+                  <div class="news-author-name">${author.name}</div>
+                  <div class="news-author-sub">${author.sub}</div>
+                </div>
+              </div>
+
+              <div class="mini-label">${art.label || 'Haber'}</div>
+              <h2 class="news-title">${art.title}</h2>
+              <p class="news-meta">${art.meta || ''}</p>
+              <p class="news-summary">${art.summary || ''}</p>
+
+              <div class="news-actions">
+                <button
+                  type="button"
+                  class="btn-primary open-news-modal"
+                  data-id="${art.id}"
+                >
+                  Tamamını Oku
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      document.querySelectorAll('.open-news-modal').forEach((button) => {
+        button.addEventListener('click', () => {
+          const artId = Number(button.dataset.id);
+          const article = allArticles.find(a => a.id === artId);
+          if (!article) return;
+
+          const author = resolveAuthor(article);
+          modalNewsTitle.textContent = article.title;
+          modalNewsMeta.textContent = article.modalMeta || article.label || 'Haber';
+          modalNewsImage.src = article.modalImage || article.image || 'yusacoder.jpg';
+          modalNewsDetail.textContent = article.detail || article.summary || '';
+
           modalAuthorRow.style.display = 'flex';
-          modalAuthorName.textContent = authorName || 'YusaCoder Admin';
-          modalAuthorSub.textContent = authorSub || 'Tarafından eklendi';
-          modalAuthorAvatar.src = authorAvatar || '';
-        } else {
-          modalAuthorRow.style.display = 'none';
-          modalAuthorAvatar.src = '';
-        }
+          modalAuthorName.textContent = author.name;
+          modalAuthorSub.textContent = author.sub;
+          modalAuthorAvatar.src = author.avatar;
 
-        newsModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+          newsModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
       });
-    });
+    }
+
+    async function loadNewsData() {
+      try {
+        const res = await fetch('haberler.json');
+        if (!res.ok) throw new Error('JSON yüklenemedi');
+        const data = await res.json();
+
+        defaultProfiles = data.profiles || [];
+        defaultProfiles.forEach(p => {
+          profilesMap[p.id] = p;
+        });
+
+        allArticles = data.articles || [];
+        renderArticles(allArticles);
+        updateNewsCount();
+      } catch (err) {
+        console.error('Haber verisi yükleme hatası:', err);
+      }
+    }
 
     function closeModal() {
       newsModal.classList.remove('active');
@@ -1692,18 +1186,13 @@ Tamamını Oku
     const searchEmptyBottom = document.getElementById('searchEmptyBottom');
     const newsCount = document.getElementById('newsCount');
 
-    function getNewsCards() {
-      return [...document.querySelectorAll('.news-card')];
-    }
-
     function updateNewsCount() {
-      const totalNews = getNewsCards().length;
-      newsCount.textContent = `Eklenen haberler: ${totalNews}`;
+      newsCount.textContent = `Eklenen haberler: ${allArticles.length}`;
     }
 
     function filterNewsByTitle() {
       const query = newsSearchInput.value.trim().toLowerCase();
-      const newsCards = getNewsCards();
+      const newsCards = document.querySelectorAll('.news-card');
       let visibleCount = 0;
 
       newsCards.forEach((card) => {
@@ -1719,12 +1208,11 @@ Tamamını Oku
       const noResult = visibleCount === 0;
       searchEmpty.style.display = noResult ? 'block' : 'none';
       searchEmptyBottom.style.display = noResult ? 'block' : 'none';
-
-      updateNewsCount();
     }
 
-    updateNewsCount();
     newsSearchInput.addEventListener('input', filterNewsByTitle);
+
+    loadNewsData();
   </script>
 </body>
 </html>

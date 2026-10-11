@@ -1,0 +1,185 @@
+{
+  "profiles": [
+    {
+      "id": "yusacoder",
+      "name": "YusaCoder",
+      "sub": "Tarafından eklendi",
+      "avatar": "yusacoder.jpg"
+    },
+    {
+      "id": "yc_admin",
+      "name": "YusaCoder Admin",
+      "sub": "Yönetici",
+      "avatar": "yusacoder.png.jpg"
+    },
+    {
+      "id": "yc_editor",
+      "name": "YusaCoder Editör",
+      "sub": "İçerik Editörü",
+      "avatar": "yusacoder.jpg"
+    },
+    {
+      "id": "yc_haber",
+      "name": "YusaCoder Haber Masası",
+      "sub": "Son Dakika Ekibi",
+      "avatar": "yusacoder.png.jpg"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Okullarda alınacak 7 yeni güvenlik tedbiri açıklandı",
+      "label": "Türkiye / Eğitim / 24 Nisan 2026",
+      "meta": "Eğitim • Güvenlik • Son Dakika",
+      "modalMeta": "24 Nisan 2026 • Eğitim Gündemi",
+      "image": "https://foto.haberler.com/haber/2026/04/23/okullarda-yeni-donem-iste-7-basamakli-yeni_6d069b3b3a_amp.jpg",
+      "modalImage": "https://image.milimaj.com/i/milliyet/75/0x0/69eb2d843e5a0a045c5c1256.jpg",
+      "summary": "Son olayların ardından okullarda güvenlik önlemleri artırılıyor. Giriş kontrolleri, kamera sistemleri ve öğrenci güvenliği için 7 maddelik yeni tedbir gündemde.",
+      "detail": "Son günlerde yaşanan olaylar sonrası eğitim kurumlarında yeni güvenlik önlemleri gündeme geldi. Taslak tedbirler arasında okul giriş denetimlerinin artırılması, kamera altyapılarının güçlendirilmesi, ziyaretçi kontrolleri ve acil durum protokollerinin güncellenmesi gibi başlıklar yer alıyor. Düzenlemenin öğrenci güvenliğini artırması hedefleniyor.",
+      "authorId": "yusacoder"
+    },
+    {
+      "id": 2,
+      "title": "Formula 1 yeniden Türkiye gündeminde",
+      "label": "Spor / Formula 1 / 24 Nisan 2026",
+      "meta": "Motor Sporları • İstanbul Park • 24 Nisan",
+      "modalMeta": "24 Nisan 2026 • Spor",
+      "image": "https://www.tosfed.org.tr/wp-content/uploads/2026/04/Formula1-Lansman-24042026-02.jpg",
+      "modalImage": "https://foto.haberler.com/haber/2026/04/24/formula-1-yeniden-turkiye-de_amp.jpg",
+      "summary": "Formula 1'in yeniden Türkiye takvimine dönme ihtimali spor gündeminde dikkat çekti. İstanbul Park iddiaları konuşuluyor.",
+      "detail": "Formula 1 organizasyonunun yeniden Türkiye'de yarış düzenleyebileceği iddiaları gündem oldu. İstanbul Park ismi tekrar ön plana çıkarken motor sporları takipçileri gelişmeleri yakından izliyor. Resmi takvim konusunda görüşmelerin sürdüğü belirtiliyor."
+    },
+    {
+      "id": 3,
+      "title": "Suça sürüklenen çocuklara yönelik yeni düzenlemede sona gelindi",
+      "label": "Türkiye / Hukuk / 24 Nisan 2026",
+      "meta": "Yargı düzenlemesi • 15-18 yaş • 24 Nisan 2026",
+      "modalMeta": "24 Nisan 2026 • Türkiye Gündemi",
+      "image": "https://foto.haberler.com/haber/2026/04/24/cocuk-suclularin-cezalari-artiyor-aileler-de_49650be74d_amp.jpg",
+      "summary": "15-18 yaş grubuna ilişkin ceza düzenlemelerinde değişiklik öngören taslakta sona yaklaşıldığı belirtiliyor. Üst ceza sınırları ve aile sorumluluğu başlıkları gündemde.",
+      "detail": "24 Nisan'da gündeme yansıyan taslak çalışmaya göre, suça sürüklenen çocuklara yönelik ceza sisteminde bazı değişiklikler değerlendiriliyor. Özellikle 15-18 yaş grubuna verilen hapis cezalarının üst sınırlarında artış ve ağır suçlarda hakime daha geniş takdir yetkisi tanınması konuşuluyor. Düzenleme taslağında aile sorumluluğunu artıran maddeler de öne çıkarken, bazı suçlarda şikayet olmasa dahi yargı sürecinin işletilebilmesine ilişkin başlıklar dikkat çekiyor. Yetkililer düzenlemenin çocuk suçluluğuyla mücadele, caydırıcılık ve aile denetimini güçlendirme amacı taşıdığını belirtirken, taslak üzerindeki değerlendirmelerin sürdüğü ifade ediliyor."
+    },
+    {
+      "id": 4,
+      "title": "Nuri Şahin, Arda Güler'e yaptığı teklifi ilk kez açıkladı: O takıma çok istedim",
+      "label": "Spor / Gündem / 23 Nisan 2026",
+      "meta": "Futbol • Arda Güler • 23 Nisan 2026",
+      "modalMeta": "23 Nisan 2026 • Spor Gündemi",
+      "image": "https://foto.haberler.com/haber/2026/04/23/nuri-sahin-arda-gulere-yaptigi-teklifi-ilk-kez_d53725857b_amp.jpg",
+      "summary": "Nuri Şahin, teknik direktörlük yaptığı dönemde Arda Güler’i kadrosuna katmak istediğini ilk kez açıkladı. Genç yıldızın verdiği cevap ise dikkat çekti.",
+      "detail": "23 Nisan 2026’da yapılan açıklamalarda Nuri Şahin, Borussia Dortmund’u çalıştırdığı dönemde Arda Güler’i kadrosuna katmayı çok istediğini söyledi. Şahin, genç futbolcuyla yaptığı görüşmede Arda Güler’in 'Ne olursa olsun bu formayı kapacağım' dediğini anlattı. Bu sözlerden etkilendiğini belirten Şahin, o dönem kendisine başarı dileğinde bulunduğunu ve Arda’nın kısa süre içinde hedeflediği formayı gerçekten kazandığını ifade etti. Açıklamalar, futbol gündeminde günün en çok konuşulan başlıklarından biri oldu.",
+      "authorId": "yc_editor"
+    },
+    {
+      "id": 5,
+      "title": "Ateşkes sürerken Hürmüz Boğazı’nda gerginlik tırmanıyor",
+      "label": "Dünya / Gündem / 23 Nisan 2026",
+      "meta": "İran • ABD • Hürmüz Boğazı",
+      "modalMeta": "23 Nisan 2026 • Dünya Gündemi",
+      "image": "https://foto.haberler.com/haber/2022/01/31/son-dakika-4-14703604_2456_amp.jpg",
+      "summary": "İran ile ABD arasında ateşkes sürse de Hürmüz Boğazı’nda tansiyon düşmedi. ABD Başkanı Donald Trump, boğaza mayın döşemeye çalışan teknelere karşı sert talimat verdiğini açıkladı.",
+      "detail": "23 Nisan 2026’da yayımlanan haberlere göre, İran ile ABD arasındaki ateşkes devam ederken Hürmüz Boğazı çevresindeki gerginlik sürdü. ABD Başkanı Donald Trump, boğaza mayın döşemeye çalışan teknelere karşı ABD Donanması’na sert talimat verdiğini açıkladı. Aynı gün uluslararası haber akışında, ABD’nin mayın temizleme faaliyetlerini artırdığı ve boğaz çevresindeki askeri hareketliliğin sürdüğü aktarıldı. Hürmüz Boğazı, dünya enerji sevkiyatı açısından kritik öneme sahip olduğu için bölgedeki her gelişme küresel piyasalar tarafından yakından izleniyor."
+    },
+    {
+      "id": 6,
+      "title": "Tokat'ta şarampole devrilen otomobildeki 2 kişi yaralandı",
+      "label": "Türkiye / Asayiş / 7 Nisan 2026",
+      "meta": "Tokat • Trafik kazası • 7 Nisan 2026",
+      "modalMeta": "7 Nisan 2026 • Türkiye Asayiş",
+      "image": "https://foto.haberler.com/haber/2026/04/07/tokat-ta-sarampole-devrilen-otomobildeki-2-ki-19774117_amp.jpg",
+      "summary": "Tokat’ta kontrolden çıkarak şarampole devrilen otomobilde bulunan 2 kişi yaralandı. Olay yerine sağlık ve güvenlik ekipleri sevk edildi.",
+      "detail": "7 Nisan 2026 tarihinde Tokat’ta meydana gelen trafik kazasında, seyir halindeki bir otomobil kontrolden çıkarak şarampole devrildi. Kazada araçta bulunan 2 kişi yaralandı. İhbar üzerine olay yerine sağlık ve güvenlik ekipleri sevk edilirken, yaralılar ilk müdahalenin ardından hastaneye kaldırıldı. Kazayla ilgili inceleme başlatıldı."
+    },
+    {
+      "id": 7,
+      "title": "Kahramanmaraş'ta 23 Nisan kutlamaları okul saldırısı nedeniyle sade geçti",
+      "label": "Türkiye / Gündem / 23 Nisan 2026",
+      "meta": "Kahramanmaraş • 23 Nisan • Eğitim",
+      "modalMeta": "23 Nisan 2026 • Türkiye Gündemi",
+      "image": "https://foto.haberler.com/haber/2026/04/23/kahramanmaras-ta-23-nisan-kutlandi-19776270_amp.jpg",
+      "summary": "Kahramanmaraş’ta 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı kutlamaları, kısa süre önce yaşanan okul saldırısının ardından bu yıl daha sade bir atmosferde gerçekleştirildi.",
+      "detail": "23 Nisan 2026’da Kahramanmaraş’ta düzenlenen Ulusal Egemenlik ve Çocuk Bayramı etkinlikleri, kısa süre önce yaşanan okul saldırısının gölgesinde gerçekleşti. Bu nedenle kentteki kutlamalar önceki yıllara göre daha sade tutuldu. Programlarda çocukların bayram coşkusu korunmaya çalışılırken, yaşanan olayın etkisi nedeniyle törende duygusal anlar da yaşandı. Kentte yapılan etkinliklerde hem bayramın anlam ve önemi vurgulandı hem de saldırıda etkilenen öğrenciler için hassas bir atmosfer gözetildi."
+    },
+    {
+      "id": 8,
+      "title": "Instagram ve sosyal medya için 15 yaş altına yeni sınırlama geldi",
+      "label": "Türkiye / Teknoloji / 22 Nisan 2026",
+      "meta": "TBMM • Sosyal medya düzenlemesi • 22 Nisan 2026",
+      "modalMeta": "22 Nisan 2026 • Türkiye Teknoloji Gündemi",
+      "image": "https://foto.haberler.com/haber/2026/04/22/sosyal-medyaya-ve-dogum-iznine-yonelik-19774903_6672_amp.jpg",
+      "summary": "Meclis’te kabul edilen yeni düzenlemeyle, 15 yaşını doldurmamış çocuklara sosyal ağ sağlayıcılar hizmet sunamayacak. Platformlara yaş doğrulama ve çocuklara özel koruma önlemleri yükümlülüğü getirildi.",
+      "detail": "22 Nisan 2026’da TBMM Genel Kurulu’nda kabul edilen düzenlemeye göre, sosyal ağ sağlayıcılar 15 yaşını doldurmamış çocuklara hizmet veremeyecek. Bu hizmetin sunulmaması için yaş doğrulama dahil gerekli tedbirleri almak platformların sorumluluğunda olacak. Düzenleme ayrıca, 15 yaşını doldurmuş çocuklara özgü ayrıştırılmış hizmet sunulması ve ebeveyn kontrol araçlarının sağlanması yönünde de yükümlülükler içeriyor. Böylece çocukların dijital ortamlarda daha güvenli şekilde korunması amaçlanıyor.",
+      "authorId": "yc_haber"
+    },
+    {
+      "id": 9,
+      "title": "Niksar’da ortaokul öğrencisi tehdit iddiasıyla gözaltına alındı",
+      "label": "Türkiye / Asayiş / 21 Nisan 2026",
+      "meta": "Tokat • Niksar • 21 Nisan 2026",
+      "modalMeta": "21 Nisan 2026 • Türkiye Asayiş",
+      "image": "https://www.niksardanismend.com/images/haberler/2026/04/bu-isin-sakasi-yok-niksar-da-okulu-tarayacagim-diyen-ogrenci-gozaltina-alindi-7412.jpg",
+      "summary": "Tokat’ın Niksar ilçesindeki bir ortaokulda, 7. sınıf öğrencisinin arkadaşlarına yönelik tehditte bulunduğu iddiası üzerine şüpheli çocuk gözaltına alındı.",
+      "detail": "21 Nisan 2026 tarihli yerel haberlere göre, Tokat’ın Niksar ilçesindeki bir ortaokulda öğrenim gören 7. sınıf öğrencisinin sınıf arkadaşlarına yönelik tehditte bulunduğu iddiası üzerine resmi süreç başlatıldı. Haberde, bazı öğrencilerin arkadaşlarının kendilerine tehdit içerikli sözler söylediğini bildirmesi üzerine olayın emniyete taşındığı aktarıldı. İddialar doğrultusunda şüpheli çocuk kısa sürede gözaltına alındı. Olayla ilgili işlemlerin çocuk adli sistemi kapsamında sürdüğü belirtildi."
+    },
+    {
+      "id": 10,
+      "title": "Samsun’da bir lisede “tas kafa” tıraşına izin verilmediği iddiası gündem oldu",
+      "label": "Türkiye / Eğitim / 20 Nisan 2026",
+      "meta": "Samsun • Okul güvenliği • 20 Nisan 2026",
+      "modalMeta": "20 Nisan 2026 • Türkiye Eğitim Gündemi",
+      "image": "https://foto.haberler.com/haber/2026/04/20/samsunda-tas-kafa-tirasi-yasaklandi_ff0d40db7f_amp.jpg",
+      "summary": "Okullarda güvenlik önlemleri tartışılırken, Samsun’daki bir lisede “tas kafa” olarak bilinen çok kısa saç modeline izin verilmediği yönündeki iddialar dikkat çekti.",
+      "detail": "20 Nisan 2026 tarihinde yayımlanan haberlere göre, Şanlıurfa ve Kahramanmaraş’taki okul saldırılarının ardından güvenlik önlemleri yeniden tartışılmaya başlandı. Bu süreçte Samsun’daki bir lisede “tas kafa” olarak bilinen çok kısa saç modeline izin verilmediği yönünde iddialar gündeme geldi. Haberde, öğrenciler ve veliler arasında paylaşılan bilgilere göre okul yönetiminin saç kesimine ilişkin yeni bir düzenleme yaptığı ve aşırı kısa saç modellerini uygun bulmadığının öne sürüldüğü aktarıldı. Konu, okul disiplin uygulamaları ve güvenlik tartışmalarının bir parçası olarak kamuoyunda dikkat çekti."
+    },
+    {
+      "id": 11,
+      "title": "Erdoğan: Okullarımızın güvenliği önceliklerimizin en başındadır",
+      "label": "Türkiye / Gündem / 20 Nisan 2026",
+      "meta": "Cumhurbaşkanlığı • Eğitim güvenliği • 20 Nisan 2026",
+      "modalMeta": "20 Nisan 2026 • Türkiye Gündemi",
+      "image": "https://konyayeniguncom.teimg.com/crop/1280x720/konyayenigun-com/uploads/2026/04/kirmizi-ve-beyaz-modern-son-dakika-haberleri-youtube-kucuk-resmi-45-9.jpg",
+      "summary": "Cumhurbaşkanı Recep Tayyip Erdoğan, son günlerde yaşanan olayların ardından okul güvenliği konusunda taviz verilmeyeceğini söyledi.",
+      "detail": "20 Nisan 2026’da Anadolu Ajansı’nda yer alan habere göre Cumhurbaşkanı Recep Tayyip Erdoğan, okul güvenliği meselesinin devletin öncelikleri arasında ilk sırada yer aldığını belirtti. Açıklamada, bu konuda en küçük bir taviz verilmeyeceği vurgulandı. Son günlerde yaşanan saldırıların ardından güvenlik tedbirlerinin daha sıkı şekilde uygulanacağı mesajı öne çıktı."
+    },
+    {
+      "id": 12,
+      "title": "Okul saldırılarının ardından 25 şüpheli hakkında gözaltı kararı",
+      "label": "Türkiye / Asayiş / 20 Nisan 2026",
+      "meta": "Sosyal medya • Tehdit paylaşımları • 20 Nisan 2026",
+      "modalMeta": "20 Nisan 2026 • Türkiye Asayiş",
+      "image": "https://image.dunya.com/rcman/Cw1280h720q95gc/storage/files/images/2026/04/16/aw684193-06-u3ic_cover.jpg",
+      "summary": "Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından tehdit içerikli paylaşım yaptığı belirtilen 25 kişi hakkında gözaltı kararı verildi.",
+      "detail": "20 Nisan 2026’da yayımlanan haberlere göre, Kahramanmaraş ve Şanlıurfa’daki okul saldırılarının ardından sosyal medyada tehdit içerikli paylaşımlar yapan 25 şüpheli hakkında gözaltı kararı verildi. Haberlerde, bu kişilerden 13’ünün 18 yaşından küçük olduğu belirtildi. Soruşturmanın, kamuoyunda korku ve panik oluşturan paylaşımlar üzerine başlatıldığı aktarıldı."
+    },
+    {
+      "id": 13,
+      "title": "Okula göndermeyen velilere ceza iddiası yeniden gündemde: Yeni yasa değil, eski düzenleme",
+      "label": "Türkiye / Eğitim / 18 Nisan 2026",
+      "meta": "222 sayılı Kanun • Eğitim • 18 Nisan 2026",
+      "modalMeta": "18 Nisan 2026 • Türkiye Eğitim Gündemi",
+      "image": "https://imgrosetta.mynet.com.tr/file/13186972/13186972-860x480.jpg",
+      "summary": "Sosyal medyada “yeni çıktı” diye paylaşılan veli cezaları konusunda, mevcut düzenlemenin aslında uzun süredir yürürlükte olduğu ve yeniden gündeme getirildiği görülüyor.",
+      "detail": "18 Nisan 2026’da sosyal medyada yeniden dolaşıma giren paylaşımlarda, çocuğunu okula göndermeyen velilere günlük para cezası uygulanacağı ve daha ağır yaptırımların gündeme geleceği iddia edildi. Yapılan incelemede bunun sıfırdan çıkarılmış yeni bir yasa değil, 222 sayılı İlköğretim ve Eğitim Kanunu’nda uzun süredir bulunan yaptırımların yeniden haberleştirildiği anlaşıldı. Kanun metninde çocuğunu okula göndermeyen veli için günlük 15 TL idari para cezası ve devam eden durumda 500 TL ek ceza ifadeleri yer alıyor. Ancak yakın dönem uygulama haberlerinde bu tutarların güncel idari para cezası hesaplamaları nedeniyle daha yüksek rakamlarla yer aldığı görüldü."
+    },
+    {
+      "id": 14,
+      "title": "“Yarın Sivas’ta yeni bir haber duyacaksınız” paylaşımı yapan 10. sınıf öğrencisi tutuklandı",
+      "label": "Türkiye / Gündem / 16 Nisan 2026",
+      "meta": "Sivas • Tehdit paylaşımı • Adli süreç",
+      "modalMeta": "16 Nisan 2026 • Türkiye Gündemi",
+      "image": "https://cdn.sivasirade.com/news/91276.jpg",
+      "summary": "Sivas’ta sosyal medyada okullara yönelik tehdit algısı oluşturan paylaşım yaptığı belirlenen 10. sınıf öğrencisi, emniyetteki işlemlerinin ardından tutuklandı.",
+      "detail": "16 Nisan 2026 tarihli haberlere göre, Sivas’ta sosyal medyada yayılan “Yarın Sivas’ta yeni bir haber duyacaksınız” paylaşımı üzerine soruşturma başlatıldı. Yapılan incelemelerde paylaşımın, bir sohbet kanalında “Bufalo58” kullanıcı adıyla dolaşıma sokulduğu ve bunu yapan kişinin 10. sınıf öğrencisi E.A. olduğu belirlendi. İl Emniyet Müdürlüğü ekipleri tarafından gözaltına alınan öğrenci, emniyetteki işlemlerinin ardından adliyeye sevk edildi. Şüpheli, çıkarıldığı mahkemece tutuklanarak cezaevine gönderildi."
+    },
+    {
+      "id": 15,
+      "title": "İran Güvenlik Konseyi: Abluka sürerse Hürmüz Boğazı’ndan geçişler engellenecek",
+      "label": "Dünya / Gündem / 18 Nisan 2026",
+      "meta": "İran • ABD ablukası • Enerji hattı",
+      "modalMeta": "18 Nisan 2026 • Dünya Gündemi",
+      "image": "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/2440000/trump-iran-hurmuz-2440350_1.jpg",
+      "summary": "İran Ulusal Güvenlik Yüksek Konseyi, ABD’nin deniz ablukasını sürdürmesi halinde Hürmüz Boğazı’ndaki geçişlerin yeniden engellenebileceğini duyurdu.",
+      "detail": "18 Nisan 2026’da yayımlanan haberlere göre İran Ulusal Güvenlik Yüksek Konseyi, ABD’nin deniz ablukası benzeri yollarla gemi geçişlerini engellemeye devam etmesini ateşkes ihlali sayacağını açıkladı. Konsey, böyle bir durumda İran’ın Hürmüz Boğazı’nın şartlı ve sınırlı biçimde açılmasını da engelleyebileceğini bildirdi."
+    }
+  ]
+}

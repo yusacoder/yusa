@@ -2,7 +2,9 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>YusaCoder | Haberler, Mini Oyunlar ve Yenilikçi Özellikler</title>
   <meta name="description" content="YusaCoder; haberler, mini oyunlar ve yenilikçi web özelliklerini modern ve mobil uyumlu bir arayüzde bir araya getirir." />
 
@@ -26,7 +28,7 @@
       --nav-brand-scroll: #ffffff;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -36,8 +38,13 @@
         linear-gradient(180deg, #090909 0%, #060606 35%, #050505 100%);
       color: var(--text);
       min-height: 100vh;
+      min-height: 100dvh;
       overflow-x: hidden;
       position: relative;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
       -webkit-user-select: none;
       user-select: none;
       -webkit-touch-callout: none;
@@ -134,6 +141,7 @@
       z-index: 1000;
       transition: background 0.6s ease, backdrop-filter 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
       border-bottom: 1px solid transparent;
+      padding-top: env(safe-area-inset-top);
     }
 
     .navbar.scrolled {
@@ -167,6 +175,7 @@
       justify-content: center;
       cursor: pointer;
       transition: all 0.45s ease;
+      touch-action: manipulation;
     }
 
     .navbar.scrolled .menu-btn {
@@ -237,7 +246,7 @@
 
     .mobile-menu {
       position: fixed;
-      top: 78px;
+      top: calc(78px + env(safe-area-inset-top));
       left: 12px;
       right: 12px;
       z-index: 999;
@@ -272,6 +281,7 @@
       border: 1px solid rgba(255,255,255,0.07);
       transition: 0.3s ease;
       font-weight: 600;
+      touch-action: manipulation;
     }
 
     .mobile-menu a:last-child { margin-bottom: 0; }
@@ -282,6 +292,7 @@
 
     .hero {
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       padding: 106px 0 44px;
@@ -371,6 +382,7 @@
       justify-content: center;
       gap: 10px;
       font-weight: 600;
+      touch-action: manipulation;
     }
 
     .btn-primary { background: #ffffff; color: #070707; box-shadow: 0 12px 36px rgba(255,255,255,0.12); }
@@ -476,6 +488,7 @@
       background: rgba(255,255,255,0.04);
       padding: 10px 14px;
       border-radius: 999px;
+      touch-action: manipulation;
     }
 
     .home-news-slider {
@@ -508,6 +521,7 @@
       text-decoration: none;
       color: inherit;
       transition: transform 0.35s ease, border-color 0.35s ease;
+      touch-action: manipulation;
     }
 
     .home-news-card:hover {
@@ -613,6 +627,7 @@
       padding: 12px 18px;
       transition: all 0.45s ease;
       width: 100%;
+      touch-action: manipulation;
     }
 
     .follow-btn span:last-child { font-size: 0.84rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -654,130 +669,9 @@
         flex-direction: column;
       }
     }
-
-    .warning-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    .warning-overlay.show {
-      display: flex;
-      opacity: 1;
-    }
-
-    .warning-content {
-      background: rgba(20, 20, 20, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 28px;
-      padding: 32px;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-      transform: translateY(20px);
-      transition: transform 0.5s ease;
-    }
-
-    .warning-overlay.show .warning-content {
-      transform: translateY(0);
-    }
-
-    .warning-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      color: #ffffff;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-    }
-
-    .warning-text {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .warning-btn {
-      background: #ffffff;
-      color: #000000;
-      border: none;
-      padding: 12px 32px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .warning-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-
-    .warning-divider {
-      height: 1px;
-      background: rgba(255, 255, 255, 0.1);
-      margin: 24px 0;
-    }
-
-    .market-link {
-      display: inline-block;
-      background: #ffffff;
-      color: #000000;
-      text-decoration: none;
-      padding: 12px 32px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-    }
-
-    .market-link:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
   </style>
 </head>
 <body oncontextmenu="return false">
-  <div id="iphoneWarning" class="warning-overlay">
-    <div class="warning-content">
-      <h2 class="warning-title">SİSTEM UYARISI</h2>
-      <p class="warning-text">
-        Sitemiz iPhone cihazlarda henüz tam optimize edilmemiştir.
-        Tasarımda kaymalar ve bazı işlevlerde sorunlar yaşayabilirsiniz.
-      </p>
-
-      <div class="warning-divider"></div>
-
-      <h2 class="warning-title">YUSACODER MARKET</h2>
-      <p class="warning-text">
-        Oyun hesapları, UC, VP, Steam cüzdan kodu ve çok daha fazlası için yeni sitemizi ziyaret edin!
-      </p>
-      <a href="https://market.yusacoder.com" target="_blank" class="market-link">MARKETE GİT</a>
-
-      <div class="warning-divider"></div>
-
-      <button class="warning-btn" onclick="closeWarning()">Anladım</button>
-    </div>
-  </div>
-
   <div class="background-layer" id="backgroundLayer"></div>
 
   <header class="navbar" id="navbar">
@@ -799,10 +693,10 @@
   </header>
 
   <nav class="mobile-menu" id="mobileMenu">
-    <a href="/">Ana Sayfa</a>
-    <a href="/iletisim">İletişim</a>
-    <a href="/oyunlar">Oyunlar</a>
-    <a href="/haberler">Haberler</a>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="iletisim.html">İletişim</a>
+    <a href="oyunlar.html">Oyunlar</a>
+    <a href="haberler.html">Haberler</a>
   </nav>
 
   <main>
@@ -853,7 +747,7 @@
               <div class="info-box">
                 <div class="mini-label">Haber Alanı</div>
                 <div class="info-text">
-                  Manuel eklenebilen haber kartları, görsel destekli içerikler ve açılır detay kutuları.
+                  JSON verisi ile yönetilen haber kartları, görseller ve detay kutuları.
                 </div>
               </div>
               <div class="info-box">
@@ -958,23 +852,6 @@
   </footer>
 
   <script>
-    const iphoneWarning = document.getElementById('iphoneWarning');
-
-    function showWarning() {
-      iphoneWarning.classList.add('show');
-    }
-
-    function closeWarning() {
-      iphoneWarning.classList.remove('show');
-      setTimeout(() => {
-        iphoneWarning.style.display = 'none';
-      }, 500);
-    }
-
-    window.addEventListener('load', () => {
-      setTimeout(showWarning, 1000);
-    });
-
     const navbar = document.getElementById('navbar');
     const backgroundLayer = document.getElementById('backgroundLayer');
     const menuBtn = document.getElementById('menuBtn');
@@ -1049,23 +926,21 @@
       if (!track) return;
 
       try {
-        const response = await fetch('haberler.html');
-        const html = await response.text();
+        const response = await fetch('haberler.json');
+        if (!response.ok) throw new Error('JSON alınamadı');
+        const data = await response.json();
+        const articles = (data.articles || []).slice(0, 5);
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const cards = [...doc.querySelectorAll('.news-card')].slice(0, 5);
-
-        if (!cards.length) {
+        if (!articles.length) {
           track.innerHTML = '';
           return;
         }
 
-        const createCardHTML = (card) => {
-          const image = card.querySelector('.news-image')?.getAttribute('src') || 'yusacoder.jpg';
-          const label = card.querySelector('.mini-label')?.textContent?.trim() || 'Haber';
-          const title = card.querySelector('.news-title')?.textContent?.trim() || 'Başlık bulunamadı';
-          const meta = card.querySelector('.news-meta')?.textContent?.trim() || 'Detay bulunamadı';
+        const createCardHTML = (art) => {
+          const image = art.image || 'yusacoder.jpg';
+          const label = art.label || 'Haber';
+          const title = art.title || 'Başlık bulunamadı';
+          const meta = art.meta || 'Detay bulunamadı';
 
           return `
             <a href="haberler.html" class="home-news-card">
@@ -1079,7 +954,7 @@
           `;
         };
 
-        const rendered = cards.map(createCardHTML).join('');
+        const rendered = articles.map(createCardHTML).join('');
         track.innerHTML = rendered + rendered;
       } catch (error) {
         track.innerHTML = `
