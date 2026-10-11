@@ -1,0 +1,5 @@
+127.0.0.1 - - [11/Oct/2026 15:59:50] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 15:59:50] "GET /yusacoder.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 15:59:51] "GET /haberler.json HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 15:59:53] "GET /haberler.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 15:59:53] "GET /yusacoder.png.jpg HTTP/1.1" 200 -
